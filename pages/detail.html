@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/style.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <navbar class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./about.html" class="navbar-link">about</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./contact.html" class="navbar-link">Contact</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./blog.html" class="navbar-link">Blog</a>
+                     </li>
+                  </ul>
+               </navbar>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button class="action-search">
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button class="action-wish">
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button class="action-wish pop-up-cart">
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p
+                              class="action-wish__count total-price-header detail-add-cart"
+                           >
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img
+                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                           alt=""
+                           class="action-avatar"
+                        />
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <p class="pop-header__see-all">See All</p>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Texes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <div class="pop-checkout">
+                        <span class="pop-checkout-text"> Checkout All </span>
+                     </div>
+                  </div>
+               </div>
+               <action class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="../pages/signIn.html" class="action-sign-in">
+                     Sign In
+                  </a>
+                  <!-- register -->
+                  <a href="../pages/signUp.html" class="action-sign-up">
+                     Sign Up</a
+                  >
+               </action>
+            </div>
+         </div>
+      </header>
+      <div class="detail" id="detail">
+         <div class="container">
+            <div class="detail-wrapper"></div>
+         </div>
+      </div>
+      <div class="info">
+         <div class="info-navbar">
+            <div class="container">
+               <ul class="info-navbar-list">
+                  <li class="info-navbar-item">
+                     <a href="#!" class="info-navbar-link">Description</a>
+                  </li>
+                  <li class="info-navbar-item">
+                     <a href="#!" class="info-navbar-link">Reviews</a>
+                  </li>
+                  <li class="info-navbar-item">
+                     <a href="#!" class="info-navbar-link">Features</a>
+                  </li>
+                  <li class="info-navbar-item">
+                     <a href="#!" class="info-navbar-link">Similar</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="info-content">
+         <div class="container">
+            <div class="info-content-wrapper">
+               <div class="info-content-description">
+                  <div class="info-content-text">
+                     <div class="product">
+                        <h1>
+                           Lavazza Coffee Blends - Try the Italian Espresso
+                        </h1>
+                        <div class="price">275,000 ₫</div>
+                        <div class="section-title">☕ Mô tả sản phẩm:</div>
+                        <ul>
+                           <li>
+                              100% hạt
+                              <span class="highlight">Arabica</span> tuyển chọn
+                              từ Trung và Nam Mỹ
+                           </li>
+                           <li>
+                              Hương vị ngọt ngào, mượt mà, thoảng mùi
+                              <span class="highlight">hoa và trái cây</span>
+                           </li>
+                           <li>
+                              Độ cường độ: 5/10 – cà phê nhẹ nhàng, dễ uống
+                           </li>
+                           <li>Rang nhẹ giúp giữ nguyên hương thơm tự nhiên</li>
+                           <li>
+                              Thích hợp dùng cho: máy espresso, moka pot, phin,
+                              French press
+                           </li>
+                        </ul>
+                        <div class="section-title">🌟 Ưu điểm nổi bật:</div>
+                        <ul>
+                           <li>
+                              Chất lượng Ý chính hiệu – sản xuất tại Torino, Ý
+                           </li>
+                           <li>Hương thơm quyến rũ, dễ gây nghiện</li>
+                           <li>Pha chế linh hoạt theo nhiều cách khác nhau</li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="info-content-reviews">
+                  <section class="reviews">
+                     <div class="container">
+                        <h2 class="reviews-title">
+                           What our customers are saying
+                        </h2>
+                        <div class="review-list">
+                           <!-- Review Item -->
+                           <div class="review-item">
+                              <img
+                                 src="https://randomuser.me/api/portraits/men/32.jpg"
+                                 alt="Jakir Hussen"
+                                 class="review-avatar"
+                              />
+                              <h3 class="review-name">Jakir Hussen</h3>
+                              <p class="review-text">
+                                 Great product, I love this Coffee Beans
+                              </p>
+                              <div class="review-rating">
+                                 <span class="stars">★ ★ ★ ☆ ☆</span>
+                                 <span class="score">(3.5)</span>
+                                 <span class="label">Review</span>
+                              </div>
+                           </div>
+                           <!-- Review Item -->
+                           <div class="review-item">
+                              <img
+                                 src="https://randomuser.me/api/portraits/men/33.jpg"
+                                 alt="Jubed Ahmed"
+                                 class="review-avatar"
+                              />
+                              <h3 class="review-name">Jubed Ahmed</h3>
+                              <p class="review-text">
+                                 Awesome Coffee, I love this Coffee Beans
+                              </p>
+                              <div class="review-rating">
+                                 <span class="stars">★ ★ ★ ☆ ☆</span>
+                                 <span class="score">(3.5)</span>
+                                 <span class="label">Review</span>
+                              </div>
+                           </div>
+                           <!-- Review Item -->
+                           <div class="review-item">
+                              <img
+                                 src="https://randomuser.me/api/portraits/men/34.jpg"
+                                 alt="Delwar Hussain"
+                                 class="review-avatar"
+                              />
+                              <h3 class="review-name">Delwar Hussain</h3>
+                              <p class="review-text">
+                                 Great product, I like this Coffee Beans
+                              </p>
+                              <div class="review-rating">
+                                 <span class="stars">★ ★ ★ ☆ ☆</span>
+                                 <span class="score">(3.5)</span>
+                                 <span class="label">Review</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+               </div>
+               <div class="info-content-features">
+                  <p class="info-content-text">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quisquam, voluptatibus. Lorem ipsum dolor sit amet
+                     consectetur adipisicing elit. Quisquam, voluptatibus.
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer">
+         <div class="container">
+            <div class="footer__row">
+               <!-- Footer column 1 -->
+               <div class="footer__col">
+                  <!-- Logo -->
+                  <a href="#!" class="logo footer__logo">
+                     <img
+                        src="../assets/icons/logo.svg"
+                        alt="grocerymart"
+                        class="logo__img"
+                     />
+                     <h1 class="logo__title">grocerymart</h1>
+                  </a>
+                  <p class="footer__desc">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quam, maxime et veniam eligendi rem voluptatibus.
+                  </p>
+                  <p class="footer__help-text">
+                     Receive product news and updates.
+                  </p>
+                  <form action="" class="footer__form">
+                     <input
+                        type="text"
+                        class="footer__input"
+                        placeholder="Email address"
+                     />
+                     <button class="btn btn--primary">SEND</button>
+                  </form>
+               </div>
+               <!-- Footer column 2 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Shop</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">All Departments</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Fashion Deals</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Electronics Discounts</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Home & Living Specials</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Beauty Bargains</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 3 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Support</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Store locator</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Order status</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 4 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Company</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Customer Service</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Terms of Use</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Privacy</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Careers</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">About</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Affiliates</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 5 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Contact</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <p class="footer__label">Email</p>
+                        <a
+                           href="mailto:contact@grocerymart.com"
+                           class="footer__link"
+                        >
+                           contact@grocerymart.com
+                        </a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hotline</p>
+                        <a href="tel:18008888" class="footer__link">18008888</a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Address</p>
+                        <p class="footer__text">
+                           No. 11D, Lot A10, Nam Trung Yen urban area, Yen Hoa
+                           Ward, Cau Giay District, City. Hanoi
+                        </p>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hours</p>
+                        <p class="footer__text">M - F 08:00am - 06:00pm</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="footer__copyright">
+                  © 2010 - 2025 Grocery Mart. All rights reserved.
+               </p>
+               <div class="footer__socials">
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--facebook"
+                  >
+                     <img
+                        src="../assets/icons/facebook.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--youtube"
+                  >
+                     <img
+                        src="../assets/icons/youtube.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--tiktok"
+                  >
+                     <img
+                        src="../assets/icons/tiktok.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--twitter"
+                  >
+                     <img
+                        src="../assets/icons/twitter.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--linkedin"
+                  >
+                     <img
+                        src="../assets/icons/linkedin.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="module" src="../assets/js/detail.js"></script>
+   </body>
+</html>

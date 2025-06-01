@@ -1,0 +1,153 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif,
+      sans-serif;
+   background-color: #f0f0f0;
+   font-size: 1.6rem;
+}
+
+.sign-up-wrapper {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   height: 100vh;
+}
+
+.sign-up-content,
+.sign-up-thumbnail {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+}
+
+.sign-up-logo {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.logo-text {
+   font-weight: 700;
+   font-size: 2.2rem;
+   line-height: 1.2;
+   color: #1a162e;
+}
+
+.sign-up-desc,
+.sign-up-heading {
+   margin-top: 50px;
+   font-weight: 500;
+   font-size: 3rem;
+   line-height: 1.2;
+   color: #1a162e;
+   text-align: center;
+}
+
+.sign-up-desc {
+   font-size: 1.6rem;
+   margin-top: 20px;
+   color: #9e9da8;
+}
+
+.form {
+   margin-top: 60px;
+}
+.input-group {
+   margin-bottom: 16px;
+}
+
+.input {
+   width: 100%;
+   padding: 16px;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   font-size: 16px;
+   background: #f9f9f9;
+}
+
+.input:focus {
+   outline: none;
+   border-color: #007bff;
+   background: white;
+}
+
+.input.error {
+   border-color: #dc3545;
+}
+
+.error-text {
+   color: #dc3545;
+   font-size: 12px;
+   margin-top: 4px;
+   display: none;
+}
+
+.checkbox-row {
+   display: flex;
+   align-items: center;
+   margin-bottom: 16px;
+   gap: 8px;
+}
+
+.checkbox-row label {
+   font-size: 14px;
+   color: #666;
+}
+
+.recovery {
+   text-align: right;
+   margin-bottom: 20px;
+}
+
+.recovery a {
+   color: #007bff;
+   text-decoration: none;
+   font-size: 14px;
+}
+
+.btn-signup {
+   width: 100%;
+   padding: 16px;
+   background: #ffc107;
+   color: white;
+   border: none;
+   border-radius: 8px;
+   font-size: 16px;
+   font-weight: 600;
+   cursor: pointer;
+   margin-bottom: 20px;
+}
+
+.btn-signup:hover {
+   background: #e0a800;
+}
+
+.btn-google {
+   width: 100%;
+   padding: 16px;
+   background: white;
+   border: 1px solid #ddd;
+   border-radius: 8px;
+   font-size: 16px;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+}
+
+.btn-google:hover {
+   background: #f5f5f5;
+}

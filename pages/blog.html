@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="vi">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/blog.css" />
+      <title>Blog - GroceryMart</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <navbar class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./about.html" class="navbar-link">about</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./contact.html" class="navbar-link">Contact</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./blog.html" class="navbar-link">Blog</a>
+                     </li>
+                  </ul>
+               </navbar>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button class="action-search">
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button class="action-wish">
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button class="action-wish pop-up-cart">
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p class="action-wish__count total-price-header">
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img
+                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                           alt=""
+                           class="action-avatar"
+                        />
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <p class="pop-header__see-all">See All</p>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Texes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <div class="pop-checkout">
+                        <span class="pop-checkout-text"> Checkout All </span>
+                     </div>
+                  </div>
+               </div>
+               <action class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="../pages/signIn.html" class="action-sign-in">
+                     Sign In
+                  </a>
+                  <!-- register -->
+                  <a href="../pages/signUp.html" class="action-sign-up">
+                     Sign Up</a
+                  >
+               </action>
+            </div>
+         </div>
+      </header>
+
+      <div class="blog-container">
+         <!-- Main Content -->
+         <main class="blog-main-content">
+            <div class="blog-content">
+               <!-- Featured Post -->
+               <section class="blog-featured-section">
+                  <h2 class="blog-featured-title">Bài viết nổi bật</h2>
+                  <article class="blog-featured-post">
+                     <div class="blog-featured-image"></div>
+                     <div class="blog-featured-content">
+                        <div class="blog-featured-meta">
+                           <span>📅 25 Tháng 5, 2025</span>
+                           <span>👤 Admin</span>
+                           <span>💬 15 bình luận</span>
+                        </div>
+                        <h3 class="blog-featured-post-title">
+                           Bí Quyết Pha Cà Phê Espresso Hoàn Hảo Tại Nhà
+                        </h3>
+                        <p class="blog-featured-excerpt">
+                           Khám phá những bí mật của việc pha chế espresso như
+                           một barista chuyên nghiệp. Từ cách chọn hạt cà phê,
+                           xay bột, đến kỹ thuật tamping và chiết xuất để có
+                           được tách espresso hoàn hảo với crema dày đặc.
+                        </p>
+                        <a href="#" class="blog-read-more">Đọc tiếp →</a>
+                     </div>
+                  </article>
+               </section>
+
+               <!-- Recent Posts -->
+               <section class="blog-recent-section">
+                  <h2 class="blog-section-title">Bài viết mới nhất</h2>
+                  <div class="blog-posts-grid">
+                     <article class="blog-post-card">
+                        <div class="blog-post-image"></div>
+                        <div class="blog-post-content">
+                           <div class="blog-post-meta">
+                              <span>📅 22/05/2025</span>
+                              <span>👤 Chef Anna</span>
+                           </div>
+                           <h3 class="blog-post-title">
+                              Cách chế biến salad trái cây tươi mát cho mùa hè
+                           </h3>
+                           <p class="blog-post-excerpt">
+                              Hướng dẫn chi tiết cách làm các loại salad trái
+                              cây ngon và bổ dưỡng...
+                           </p>
+                           <a href="#" class="blog-post-link">Xem thêm →</a>
+                        </div>
+                     </article>
+
+                     <article class="blog-post-card">
+                        <div class="blog-post-image"></div>
+                        <div class="blog-post-content">
+                           <div class="blog-post-meta">
+                              <span>📅 20/05/2025</span>
+                              <span>👤 Dr. Mai</span>
+                           </div>
+                           <h3 class="blog-post-title">
+                              Lợi ích của việc ăn thực phẩm hữu cơ
+                           </h3>
+                           <p class="blog-post-excerpt">
+                              Tìm hiểu về những lợi ích sức khỏe từ thực phẩm
+                              hữu cơ và cách nhận biết...
+                           </p>
+                           <a href="#" class="blog-post-link">Xem thêm →</a>
+                        </div>
+                     </article>
+
+                     <article class="blog-post-card">
+                        <div class="blog-post-image"></div>
+                        <div class="blog-post-content">
+                           <div class="blog-post-meta">
+                              <span>📅 18/05/2025</span>
+                              <span>👤 Chef Tom</span>
+                           </div>
+                           <h3 class="blog-post-title">
+                              Bí quyết bảo quản thực phẩm tươi lâu
+                           </h3>
+                           <p class="blog-post-excerpt">
+                              Những mẹo hay giúp bạn bảo quản thực phẩm tươi
+                              ngon lâu hơn...
+                           </p>
+                           <a href="#" class="blog-post-link">Xem thêm →</a>
+                        </div>
+                     </article>
+
+                     <article class="blog-post-card">
+                        <div class="blog-post-image"></div>
+                        <div class="blog-post-content">
+                           <div class="blog-post-meta">
+                              <span>📅 15/05/2025</span>
+                              <span>👤 Nutritionist Lisa</span>
+                           </div>
+                           <h3 class="blog-post-title">
+                              Thực đơn eat clean cho người mới bắt đầu
+                           </h3>
+                           <p class="blog-post-excerpt">
+                              Hướng dẫn xây dựng thực đơn eat clean đơn giản và
+                              dễ thực hiện...
+                           </p>
+                           <a href="#" class="blog-post-link">Xem thêm →</a>
+                        </div>
+                     </article>
+                  </div>
+               </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="blog-sidebar">
+               <!-- Search Widget -->
+               <div class="blog-sidebar-widget">
+                  <h3 class="blog-widget-title">Tìm kiếm</h3>
+                  <input
+                     type="text"
+                     class="blog-search-input"
+                     placeholder="Tìm kiếm bài viết..."
+                  />
+               </div>
+
+               <!-- Categories Widget -->
+               <div class="blog-sidebar-widget">
+                  <h3 class="blog-widget-title">Danh mục</h3>
+                  <ul class="blog-categories-list">
+                     <li class="blog-category-item">
+                        <a href="#" class="blog-category-link">
+                           Kỹ thuật pha chế
+                           <span class="blog-category-count">15</span>
+                        </a>
+                     </li>
+                     <li class="blog-category-item">
+                        <a href="#" class="blog-category-link">
+                           Máy pha cà phê
+                           <span class="blog-category-count">12</span>
+                        </a>
+                     </li>
+                     <li class="blog-category-item">
+                        <a href="#" class="blog-category-link">
+                           Hạt cà phê
+                           <span class="blog-category-count">10</span>
+                        </a>
+                     </li>
+                     <li class="blog-category-item">
+                        <a href="#" class="blog-category-link">
+                           Latte Art
+                           <span class="blog-category-count">8</span>
+                        </a>
+                     </li>
+                     <li class="blog-category-item">
+                        <a href="#" class="blog-category-link">
+                           Cà phê thế giới
+                           <span class="blog-category-count">6</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+
+               <!-- Tags Widget -->
+               <div class="blog-sidebar-widget">
+                  <h3 class="blog-widget-title">Từ khóa phổ biến</h3>
+                  <div class="blog-tag-cloud">
+                     <a href="#" class="blog-tag">Espresso</a>
+                     <a href="#" class="blog-tag">Latte</a>
+                     <a href="#" class="blog-tag">Cappuccino</a>
+                     <a href="#" class="blog-tag">Arabica</a>
+                     <a href="#" class="blog-tag">Robusta</a>
+                     <a href="#" class="blog-tag">Barista</a>
+                     <a href="#" class="blog-tag">Latte Art</a>
+                     <a href="#" class="blog-tag">Cold Brew</a>
+                  </div>
+               </div>
+
+               <!-- Newsletter Widget -->
+               <div class="blog-sidebar-widget blog-newsletter">
+                  <h3 class="blog-widget-title blog-newsletter-title">
+                     Đăng ký nhận tin
+                  </h3>
+                  <p class="blog-newsletter-desc">
+                     Nhận những tips pha chế và review cà phê mới nhất!
+                  </p>
+                  <form class="blog-newsletter-form">
+                     <input
+                        type="email"
+                        class="blog-newsletter-input"
+                        placeholder="Email của bạn"
+                     />
+                     <button type="submit" class="blog-newsletter-btn">
+                        Đăng ký
+                     </button>
+                  </form>
+               </div>
+            </aside>
+         </main>
+      </div>
+      <div class="footer">
+         <div class="container">
+            <div class="footer__row">
+               <!-- Footer column 1 -->
+               <div class="footer__col">
+                  <!-- Logo -->
+                  <a href="#!" class="logo footer__logo">
+                     <img
+                        src="../assets/icons/logo.svg"
+                        alt="grocerymart"
+                        class="logo__img"
+                     />
+                     <h1 class="logo__title">grocerymart</h1>
+                  </a>
+                  <p class="footer__desc">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quam, maxime et veniam eligendi rem voluptatibus.
+                  </p>
+                  <p class="footer__help-text">
+                     Receive product news and updates.
+                  </p>
+                  <form action="" class="footer__form">
+                     <input
+                        type="text"
+                        class="footer__input"
+                        placeholder="Email address"
+                     />
+                     <button class="btn btn--primary">SEND</button>
+                  </form>
+               </div>
+               <!-- Footer column 2 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Shop</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">All Departments</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Fashion Deals</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Electronics Discounts</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Home & Living Specials</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Beauty Bargains</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 3 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Support</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Store locator</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Order status</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 4 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Company</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Customer Service</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Terms of Use</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Privacy</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Careers</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">About</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Affiliates</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 5 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Contact</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <p class="footer__label">Email</p>
+                        <a
+                           href="mailto:contact@grocerymart.com"
+                           class="footer__link"
+                        >
+                           contact@grocerymart.com
+                        </a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hotline</p>
+                        <a href="tel:18008888" class="footer__link">18008888</a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Address</p>
+                        <p class="footer__text">
+                           No. 11D, Lot A10, Nam Trung Yen urban area, Yen Hoa
+                           Ward, Cau Giay District, City. Hanoi
+                        </p>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hours</p>
+                        <p class="footer__text">M - F 08:00am - 06:00pm</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="footer__copyright">
+                  © 2010 - 2025 Grocery Mart. All rights reserved.
+               </p>
+               <div class="footer__socials">
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--facebook"
+                  >
+                     <img
+                        src="../assets/icons/facebook.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--youtube"
+                  >
+                     <img
+                        src="../assets/icons/youtube.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--tiktok"
+                  >
+                     <img
+                        src="../assets/icons/tiktok.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--twitter"
+                  >
+                     <img
+                        src="../assets/icons/twitter.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--linkedin"
+                  >
+                     <img
+                        src="../assets/icons/linkedin.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="../assets/js/blog.js"></script>
+   </body>
+</html>

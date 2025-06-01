@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/contact.css" />
+      <title>Contact - GroceryMart</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <navbar class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./about.html" class="navbar-link">about</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./contact.html" class="navbar-link">Contact</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./blog.html" class="navbar-link">Blog</a>
+                     </li>
+                  </ul>
+               </navbar>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button class="action-search">
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button class="action-wish">
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button class="action-wish pop-up-cart">
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p class="action-wish__count total-price-header">
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img
+                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                           alt=""
+                           class="action-avatar"
+                        />
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <p class="pop-header__see-all">See All</p>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Texes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <div class="pop-checkout">
+                        <span class="pop-checkout-text"> Checkout All </span>
+                     </div>
+                  </div>
+               </div>
+               <action class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="../pages/signIn.html" class="action-sign-in">
+                     Sign In
+                  </a>
+                  <!-- register -->
+                  <a href="../pages/signUp.html" class="action-sign-up">
+                     Sign Up</a
+                  >
+               </action>
+            </div>
+         </div>
+      </header>
+
+      <!-- Main Contact Content -->
+      <main class="contact-main-wrapper">
+         <div class="contact-info-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-card">
+               <div class="contact-form-header">
+                  <h2>Gửi Tin Nhắn</h2>
+                  <p>Chúng tôi sẽ phản hồi trong vòng 24 giờ</p>
+               </div>
+
+               <form class="contact-form" id="contactForm">
+                  <div class="contact-form-group">
+                     <label class="contact-form-label" for="contactName"
+                        >Họ và Tên *</label
+                     >
+                     <input
+                        type="text"
+                        id="contactName"
+                        class="contact-form-input"
+                        required
+                     />
+                  </div>
+
+                  <div class="contact-form-group">
+                     <label class="contact-form-label" for="contactEmail"
+                        >Email *</label
+                     >
+                     <input
+                        type="email"
+                        id="contactEmail"
+                        class="contact-form-input"
+                        required
+                     />
+                  </div>
+
+                  <div class="contact-form-group">
+                     <label class="contact-form-label" for="contactPhone"
+                        >Số Điện Thoại</label
+                     >
+                     <input
+                        type="tel"
+                        id="contactPhone"
+                        class="contact-form-input"
+                     />
+                  </div>
+
+                  <div class="contact-form-group">
+                     <label class="contact-form-label" for="contactSubject"
+                        >Chủ Đề</label
+                     >
+                     <select id="contactSubject" class="contact-form-select">
+                        <option value="">Chọn chủ đề</option>
+                        <option value="product">Thông tin sản phẩm</option>
+                        <option value="order">Đặt hàng</option>
+                        <option value="complaint">Khiếu nại</option>
+                        <option value="partnership">Hợp tác</option>
+                        <option value="other">Khác</option>
+                     </select>
+                  </div>
+
+                  <div class="contact-form-group">
+                     <label class="contact-form-label" for="contactMessage"
+                        >Tin Nhắn *</label
+                     >
+                     <textarea
+                        id="contactMessage"
+                        class="contact-form-textarea"
+                        required
+                        placeholder="Hãy chia sẻ với chúng tôi..."
+                     ></textarea>
+                  </div>
+
+                  <button type="submit" class="contact-submit-btn">
+                     Gửi Tin Nhắn
+                  </button>
+               </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info-card">
+               <div class="contact-info-header">
+                  <h2>Thông Tin Liên Hệ</h2>
+                  <p>Nhiều cách để kết nối với chúng tôi</p>
+               </div>
+
+               <div class="contact-info-item">
+                  <div class="contact-info-icon">📍</div>
+                  <div class="contact-info-details">
+                     <h3>Địa Chỉ Cửa Hàng</h3>
+                     <p>
+                        123 Đường Nguyễn Huệ<br />
+                        Quận 1, TP. Hồ Chí Minh<br />
+                        Việt Nam
+                     </p>
+                  </div>
+               </div>
+
+               <div class="contact-info-item">
+                  <div class="contact-info-icon">📞</div>
+                  <div class="contact-info-details">
+                     <h3>Điện Thoại</h3>
+                     <p>
+                        📱 Hotline: (028) 1234-5678<br />
+                        📠 Fax: (028) 1234-5679
+                     </p>
+                  </div>
+               </div>
+
+               <div class="contact-info-item">
+                  <div class="contact-info-icon">✉️</div>
+                  <div class="contact-info-details">
+                     <h3>Email</h3>
+                     <p>
+                        📧 info@grocerymart.com<br />
+                        📧 support@grocerymart.com
+                     </p>
+                  </div>
+               </div>
+
+               <div class="contact-info-item">
+                  <div class="contact-info-icon">🌐</div>
+                  <div class="contact-info-details">
+                     <h3>Mạng Xã Hội</h3>
+                     <p>
+                        Facebook: @GroceryMartVN<br />
+                        Instagram: @grocerymart_coffee<br />
+                        Zalo: 0901234567
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Map Section -->
+         <div class="contact-map-section">
+            <div class="contact-map-header">
+               <h2>Tìm Đường Đến Cửa Hàng</h2>
+               <p>
+                  Chúng tôi tọa lạc tại trung tâm thành phố, dễ dàng di chuyển
+               </p>
+            </div>
+            <div class="contact-map-placeholder">
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15674.07024494969!2d106.61734189999997!3d10.84818387579179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752b6c45518149%3A0x61ad68f436189212!2zSOG7iE4gQ09GRkVF!5e0!3m2!1svi!2s!4v1748749044452!5m2!1svi!2s"
+                  width="100%"
+                  height="100%"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+               ></iframe>
+            </div>
+         </div>
+
+         <!-- Hours Section -->
+         <div class="contact-hours-section">
+            <div class="contact-hours-header">
+               <h2>Giờ Hoạt Động</h2>
+               <p>Chúng tôi luôn sẵn sàng phục vụ bạn</p>
+            </div>
+
+            <div class="contact-hours-grid">
+               <div class="contact-hours-item">
+                  <h3>☕ Cửa Hàng Chính</h3>
+                  <ul class="contact-hours-list">
+                     <li>
+                        <span>Thứ 2 - Thứ 6:</span> <span>6:00 - 22:00</span>
+                     </li>
+                     <li><span>Thứ 7:</span> <span>6:00 - 23:00</span></li>
+                     <li><span>Chủ Nhật:</span> <span>7:00 - 22:00</span></li>
+                  </ul>
+               </div>
+
+               <div class="contact-hours-item">
+                  <h3>📞 Hỗ Trợ Khách Hàng</h3>
+                  <ul class="contact-hours-list">
+                     <li>
+                        <span>Thứ 2 - Thứ 6:</span> <span>8:00 - 20:00</span>
+                     </li>
+                     <li><span>Thứ 7:</span> <span>8:00 - 18:00</span></li>
+                     <li><span>Chủ Nhật:</span> <span>9:00 - 17:00</span></li>
+                  </ul>
+               </div>
+
+               <div class="contact-hours-item">
+                  <h3>🚚 Giao Hàng</h3>
+                  <ul class="contact-hours-list">
+                     <li>
+                        <span>Thứ 2 - Thứ 6:</span> <span>8:00 - 20:00</span>
+                     </li>
+                     <li><span>Thứ 7 - CN:</span> <span>9:00 - 18:00</span></li>
+                     <li>
+                        <span>Giao hàng nhanh:</span> <span>Trong ngày</span>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </main>
+      <div class="footer">
+         <div class="container">
+            <div class="footer__row">
+               <!-- Footer column 1 -->
+               <div class="footer__col">
+                  <!-- Logo -->
+                  <a href="#!" class="logo footer__logo">
+                     <img
+                        src="../assets/icons/logo.svg"
+                        alt="grocerymart"
+                        class="logo__img"
+                     />
+                     <h1 class="logo__title">grocerymart</h1>
+                  </a>
+                  <p class="footer__desc">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quam, maxime et veniam eligendi rem voluptatibus.
+                  </p>
+                  <p class="footer__help-text">
+                     Receive product news and updates.
+                  </p>
+                  <form action="" class="footer__form">
+                     <input
+                        type="text"
+                        class="footer__input"
+                        placeholder="Email address"
+                     />
+                     <button class="btn btn--primary">SEND</button>
+                  </form>
+               </div>
+               <!-- Footer column 2 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Shop</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">All Departments</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Fashion Deals</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Electronics Discounts</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Home & Living Specials</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Beauty Bargains</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 3 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Support</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Store locator</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Order status</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 4 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Company</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Customer Service</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Terms of Use</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Privacy</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Careers</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">About</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Affiliates</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 5 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Contact</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <p class="footer__label">Email</p>
+                        <a
+                           href="mailto:contact@grocerymart.com"
+                           class="footer__link"
+                        >
+                           contact@grocerymart.com
+                        </a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hotline</p>
+                        <a href="tel:18008888" class="footer__link">18008888</a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Address</p>
+                        <p class="footer__text">
+                           No. 11D, Lot A10, Nam Trung Yen urban area, Yen Hoa
+                           Ward, Cau Giay District, City. Hanoi
+                        </p>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hours</p>
+                        <p class="footer__text">M - F 08:00am - 06:00pm</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="footer__copyright">
+                  © 2010 - 2025 Grocery Mart. All rights reserved.
+               </p>
+               <div class="footer__socials">
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--facebook"
+                  >
+                     <img
+                        src="../assets/icons/facebook.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--youtube"
+                  >
+                     <img
+                        src="../assets/icons/youtube.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--tiktok"
+                  >
+                     <img
+                        src="../assets/icons/tiktok.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--twitter"
+                  >
+                     <img
+                        src="../assets/icons/twitter.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--linkedin"
+                  >
+                     <img
+                        src="../assets/icons/linkedin.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="../assets/js/contact.js"></script>
+   </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Product Management - Admin Dashboard</title>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+      <link rel="stylesheet" href="../assets/styles/admin.css" />
+   </head>
+   <body>
+      <div class="admin-layout">
+         <div class="sidebar">
+            <div class="sidebar-header">
+               <h1 class="sidebar-title">Admin Dashboard</h1>
+            </div>
+
+            <nav class="sidebar-nav">
+               <a href="#" class="nav-item active">
+                  <i class="fas fa-home"></i>
+                  Dashboard
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-heart"></i>
+                  Categories
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-shopping-cart"></i>
+                  Products
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-bookmark"></i>
+                  Topics
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-file-alt"></i>
+                  Posts
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-comments"></i>
+                  Comments
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-users"></i>
+                  Users
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-chart-bar"></i>
+                  Analytics
+               </a>
+               <a href="#" class="nav-item">
+                  <i class="fas fa-cog"></i>
+                  Settings
+               </a>
+            </nav>
+
+            <div class="sidebar-footer">
+               <div class="user-info">
+                  <div class="user-avatar">JD</div>
+                  <div class="user-details">
+                     <div class="user-name">John Doe</div>
+                     <div class="user-role">Administrator</div>
+                  </div>
+                  <i class="fas fa-chevron-down dropdown-icon"></i>
+               </div>
+            </div>
+         </div>
+         <main class="main-content">
+            <div class="container">
+               <div class="wrapper-header">
+                  <div class="header">
+                     <h1>Products</h1>
+                     <button class="btn-primary"><span>+</span> Add New</button>
+                  </div>
+                  <!-- Filters -->
+                  <div class="filters">
+                     <div class="filter-group">
+                        <label>Search Products</label>
+                        <input
+                           type="text"
+                           class="search-input"
+                           placeholder="Search by name, SKU..."
+                           id="searchInput"
+                        />
+                     </div>
+                     <div class="filter-group">
+                        <label>Category</label>
+                        <select class="select-input" id="categoryFilter">
+                           <option value="all">All Categories</option>
+                           <option value="Coffee">Coffee</option>
+                           <option value="Lavazza">Lavazza</option>
+                           <option value="Qualità">Qualità</option>
+                           <option value="Starbucks">Starbucks</option>
+                           <option value="Costa">Costa</option>
+                        </select>
+                     </div>
+                  </div>
+                  <!-- Products Table -->
+                  <div class="table-container">
+                     <table class="table">
+                        <thead>
+                           <tr>
+                              <th>Product</th>
+                              <th>Category</th>
+                              <th>Price</th>
+                              <th>Actions</th>
+                           </tr>
+                        </thead>
+                        <tbody id="productTableBody"></tbody>
+                     </table>
+                  </div>
+               </div>
+               <div class="cat-wrapper">
+                  <h2 class="cat-title">Product Categories</h2>
+                  <div class="cat-card">
+                     <div class="cat-header">
+                        <h3 class="cat-subtitle">Categories</h3>
+                        <button class="cat-btn-add">+ Add New</button>
+                     </div>
+                     <table class="cat-table">
+                        <thead>
+                           <tr>
+                              <th>Image</th>
+                              <th>Name</th>
+                              <th>Description</th>
+                              <th>Products</th>
+                              <th>Actions</th>
+                           </tr>
+                        </thead>
+                        <tbody id="categoryTableBody"></tbody>
+                     </table>
+                  </div>
+               </div>
+               <div class="coffee-dashboard">
+                  <div class="coffee-dashboard-container">
+                     <div class="coffee-dashboard-header">
+                        <h1 class="coffee-dashboard-title">
+                           Dashboard Overview
+                        </h1>
+                     </div>
+
+                     <div class="coffee-stats-grid">
+                        <div class="coffee-stat-card sales">
+                           <div class="coffee-stat-header">
+                              <div class="coffee-stat-content">
+                                 <div class="coffee-stat-label">
+                                    Total Sales
+                                 </div>
+                                 <div class="coffee-stat-value" id="totalSales">
+                                    $24,780
+                                 </div>
+                                 <div class="coffee-stat-change positive">
+                                    ↑ 12.5% from last month
+                                 </div>
+                              </div>
+                              <div class="coffee-stat-icon">
+                                 <i class="fas fa-dollar-sign"></i>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="coffee-stat-card customers">
+                           <div class="coffee-stat-header">
+                              <div class="coffee-stat-content">
+                                 <div class="coffee-stat-label">
+                                    New Customers
+                                 </div>
+                                 <div
+                                    class="coffee-stat-value"
+                                    id="newCustomers"
+                                 >
+                                    578
+                                 </div>
+                                 <div class="coffee-stat-change positive">
+                                    ↑ 8.2% from last month
+                                 </div>
+                              </div>
+                              <div class="coffee-stat-icon">
+                                 <i class="fas fa-user-plus"></i>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="coffee-stat-card products">
+                           <div class="coffee-stat-header">
+                              <div class="coffee-stat-content">
+                                 <div class="coffee-stat-label">
+                                    Active Products
+                                 </div>
+                                 <div
+                                    class="coffee-stat-value"
+                                    id="activeProducts"
+                                 >
+                                    1,247
+                                 </div>
+                                 <div class="coffee-stat-change positive">
+                                    ↑ 4.3% from last month
+                                 </div>
+                              </div>
+                              <div class="coffee-stat-icon">
+                                 <i class="fas fa-box"></i>
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="coffee-stat-card bounce">
+                           <div class="coffee-stat-header">
+                              <div class="coffee-stat-content">
+                                 <div class="coffee-stat-label">
+                                    Bounce Rate
+                                 </div>
+                                 <div class="coffee-stat-value" id="bounceRate">
+                                    42.8%
+                                 </div>
+                                 <div class="coffee-stat-change negative">
+                                    ↓ 2.7% from last month
+                                 </div>
+                              </div>
+                              <div class="coffee-stat-icon">
+                                 <i class="fas fa-chart-pie"></i>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </main>
+      </div>
+      <template id="addProductModal">
+         <form action="" id="addProductForm">
+            <div class="form-group">
+               <div class="form-group">
+                  <label for="productImage">Product Image</label>
+                  <input
+                     type="text"
+                     id="productImage"
+                     class="form-control"
+                     placeholder="Enter product image URL"
+                  />
+               </div>
+               <label for="productName">Product Name</label>
+               <input
+                  type="text"
+                  id="productName"
+                  class="form-control"
+                  placeholder="Enter product name"
+               />
+            </div>
+            <div class="form-group">
+               <label for="productCategory">Category</label>
+               <select id="productCategory" class="form-control">
+                  <option value="">Select Category</option>
+                  <option value="Coffee">Coffee</option>
+                  <option value="Lavazza">Lavazza</option>
+                  <option value="Qualità">Qualità</option>
+                  <option value="Starbucks">Starbucks</option>
+                  <option value="Costa">Costa</option>
+                  <option value="Nescafe">Nescafe</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="productPrice">Price</label>
+               <input
+                  type="number"
+                  id="productPrice"
+                  class="form-control"
+                  placeholder="Enter product price"
+               />
+            </div>
+            <div class="form-group">
+               <label for="productRating">Rating</label>
+               <input
+                  type="number"
+                  id="productRating"
+                  class="form-control"
+                  placeholder="Enter product rating"
+               />
+            </div>
+            <button type="submit" class="btn-primary">Save Product</button>
+         </form>
+      </template>
+      <template id="editProductModal">
+         <form action="" id="addProductForm">
+            <div class="form-group">
+               <div class="form-group">
+                  <label for="productImage">Product Image</label>
+                  <input
+                     type="text"
+                     id="productImage"
+                     class="form-control"
+                     placeholder="Enter product image URL"
+                  />
+               </div>
+               <label for="productName">Product Name</label>
+               <input
+                  type="text"
+                  id="productName"
+                  class="form-control"
+                  placeholder="Enter product name"
+               />
+            </div>
+            <div class="form-group">
+               <label for="productCategory">Category</label>
+               <select id="productCategory" class="form-control">
+                  <option value="">Select Category</option>
+                  <option value="Coffee">Coffee</option>
+                  <option value="Lavazza">Lavazza</option>
+                  <option value="Qualità">Qualità</option>
+                  <option value="Starbucks">Starbucks</option>
+                  <option value="Costa">Costa</option>
+                  <option value="Nescafe">Nescafe</option>
+               </select>
+            </div>
+            <div class="form-group">
+               <label for="productPrice">Price</label>
+               <input
+                  type="number"
+                  id="productPrice"
+                  class="form-control"
+                  placeholder="Enter product price"
+               />
+            </div>
+            <div class="form-group">
+               <label for="productRating">Rating</label>
+               <input
+                  type="number"
+                  id="productRating"
+                  class="form-control"
+                  placeholder="Enter product rating"
+               />
+            </div>
+            <button type="submit" class="btn-primary">Save Product</button>
+         </form>
+      </template>
+      <template id="addCategories">
+         <form action="" id="addCategoriesForm">
+            <div class="form-group">
+               <div class="form-group">
+                  <label for="categoryImage">Category Image</label>
+                  <input
+                     type="text"
+                     id="categoryImage"
+                     class="form-control"
+                     placeholder="Enter product image URL"
+                  />
+               </div>
+               <label for="categoryName">Category Name</label>
+               <input
+                  type="text"
+                  id="categoryName"
+                  class="form-control"
+                  placeholder="Enter category name"
+               />
+            </div>
+            <div class="form-group">
+               <label for="categoryDesc">Description</label>
+               <input
+                  type="text"
+                  id="categoryDesc"
+                  class="form-control"
+                  placeholder="Enter category description"
+               />
+            </div>
+            <div class="form-group">
+               <label for="categoryCount">Products</label>
+               <input
+                  type="number"
+                  id="categoryCount"
+                  class="form-control"
+                  placeholder="Enter Category Count"
+               />
+            </div>
+            <button type="submit" class="btn-primary">Save Product</button>
+         </form>
+      </template>
+
+      <script type="module" src="../assets/js/admin.js"></script>
+   </body>
+</html>
