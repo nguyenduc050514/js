@@ -225,38 +225,26 @@
   ],
   "carts": [
     {
-      "id": "9",
-      "name": "Starbucks Holiday Blend - Ground Coffee",
-      "price": 58.5,
-      "image": "https://kallos.co/cdn/shop/files/StarbucksHolidayBlendGroundCoffee1.png?v=1726499514&width=1080",
-      "quantity": 1
-    },
-    {
-      "id": "9",
-      "name": "Starbucks Holiday Blend - Ground Coffee",
-      "price": 58.5,
-      "image": "https://kallos.co/cdn/shop/files/StarbucksHolidayBlendGroundCoffee1.png?v=1726499514&width=1080",
-      "quantity": 1
-    },
-    {
-      "id": "14",
+      "id": "15",
       "name": "Illy Coffee Single Flow - Pack Iperespresso Capsules Coffee",
       "price": 70.5,
       "image": "https://kallos.co/cdn/shop/files/IllySingleFlowPackIperespressoCapsulesCoffeeN7.jpg?v=1692835190&width=1080",
-      "quantity": 1
+      "quantity": 2
     },
     {
-      "id": "7",
-      "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
-      "price": 99.99,
-      "image": "/assets/image/products-3.png",
+      "id": "11",
+      "name": "Starbucks Espresso Dark Roast -  Whole Bean Coffee",
+      "price": 54.5,
+      "image": "https://kallos.co/cdn/shop/products/ca-phe-starbucks-espresso-dark-roast-whole-bean-kallos-vietnam-1.jpg?v=1676068063&width=1080",
       "quantity": 1
     }
   ],
   "likedProducts": {
     "ids": [
+      "3",
       "6",
       "9",
+      "10",
       "11"
     ]
   },
