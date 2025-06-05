@@ -1,39 +1,39 @@
-import { showErrorMessage } from "./ui-utils.js";
+import ApiService from "../apis/api-service.js";
 
-export class WishlistManager {
-   constructor(app) {
-      this.app = app;
+class WishlistManager {
+   constructor(URL) {
+      this.API_BASE_URL = URL;
+      this.apiService = new ApiService(this.API_BASE_URL);
    }
 
    async handleWishlistToggle(e) {
+      this.products = await this.apiService.getProducts();
+      console.log(this.products);
       if (!e.target.closest(".products-wish")) return;
-
       e.preventDefault();
       e.stopPropagation();
       const productsItem = e.target.closest(".products-item");
       if (!productsItem) {
          console.error("Products item not found");
-         showErrorMessage("Không tìm thấy sản phẩm.");
+         showNotification("Không tìm thấy sản phẩm.", "error");
          return;
       }
 
       const productId = Number(productsItem.dataset.product);
       if (!productId) {
          console.error("Product ID not found in dataset");
-         showErrorMessage("Không tìm thấy ID sản phẩm.");
+         showNotification("Không tìm thấy ID sản phẩm.", "error");
          return;
       }
 
-      const productIndex = this.app.products.findIndex(
-         (p) => +p.id === +productId
-      );
+      const productIndex = this.products.findIndex((p) => +p.id === +productId);
       if (productIndex === -1) {
          console.error(`Product with ID ${productId} not found`);
-         showErrorMessage("Sản phẩm không tồn tại.");
+         showNotification("Sản phẩm không tồn tại.", "error");
          return;
       }
 
-      const product = this.app.products[productIndex];
+      const product = this.products[productIndex];
       const originalLiked = product.liked;
       product.liked = !originalLiked;
 
@@ -45,14 +45,14 @@ export class WishlistManager {
       }
 
       try {
-         await this.app.apiService.saveLikedProducts(
-            this.app.products.filter((p) => p.liked).map((p) => p.id)
-         );
-         if (this.app.actionWishCount) {
-            this.app.actionWishCount.textContent = this.app.products.filter(
-               (p) => p.liked
-            ).length;
+         const likedProducts = this.products
+            .filter((p) => p.liked)
+            .map((p) => p.id);
+         await this.apiService.saveLikedProducts(likedProducts);
+         if (this.elements.actionWishCount) {
+            this.elements.actionWishCount.textContent = likedProducts.length;
          }
+         showNotification("Đã thêm vào sản phẩm yêu thích");
       } catch (error) {
          product.liked = originalLiked;
          if (heartSvg) {
@@ -60,29 +60,30 @@ export class WishlistManager {
                ? "./assets/icons/heart-red.svg"
                : "./assets/icons/heart.svg";
          }
-         showErrorMessage(
-            "Không thể cập nhật danh sách yêu thích. Vui lòng kiểm tra server."
+         showNotification(
+            "Không thể cập nhật danh sách yêu thích. Vui lòng kiểm tra server.",
+            "error"
          );
       }
    }
 
    async loadLikedProducts(products) {
       try {
-         const likedProductIds = await this.app.apiService.loadLikedProducts();
+         const likedProductIds = await this.apiService.loadLikedProducts();
          products.forEach((p) => {
             p.liked = likedProductIds.includes(p.id);
          });
 
-         if (this.app.actionWishCount) {
-            this.app.actionWishCount.textContent = likedProductIds.length;
+         if (this.actionWishCount) {
+            this.actionWishCount.textContent = likedProductIds.length;
          }
 
          console.log("Successfully loaded liked products from server");
          return products;
       } catch (error) {
          console.error("Error loading liked products:", error.message);
-         if (this.app.actionWishCount) {
-            this.app.actionWishCount.textContent = products.filter(
+         if (this.actionWishCount) {
+            this.actionWishCount.textContent = products.filter(
                (p) => p.liked
             ).length;
          }
@@ -90,3 +91,5 @@ export class WishlistManager {
       }
    }
 }
+
+export default WishlistManager;

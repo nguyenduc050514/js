@@ -21,31 +21,41 @@
                   />
                   <h1 class="logo__title">grocerymart</h1>
                </a>
-               <navbar class="navbar">
+               <nav class="navbar">
                   <ul class="navbar-list">
                      <li class="navbar-item">
                         <a href="/" class="navbar-link">Home</a>
                      </li>
                      <li class="navbar-item">
                         <a href="./pages/about.html" class="navbar-link"
-                           >about</a
+                           >About</a
                         >
                      </li>
                      <li class="navbar-item">
-                        <a href="/" class="navbar-link">Contact</a>
+                        <a href="./pages/contact.html" class="navbar-link"
+                           >Contact</a
+                        >
                      </li>
                      <li class="navbar-item">
                         <a href="./pages/blog.html" class="navbar-link">Blog</a>
                      </li>
                   </ul>
-               </navbar>
+               </nav>
                <div class="action" style="display: none">
                   <div class="action-wrapper">
-                     <button class="action-search">
+                     <button
+                        class="action-search"
+                        type="button"
+                        aria-label="Search"
+                     >
                         <img src="../assets/icons/search.svg" alt="search" />
                      </button>
                      <div class="action-love">
-                        <button class="action-wish">
+                        <button
+                           class="action-wish"
+                           type="button"
+                           aria-label="Wishlist"
+                        >
                            <img src="../assets/icons/wish.svg" alt="" />
                            <p
                               class="action-wish__count"
@@ -54,7 +64,11 @@
                               03
                            </p>
                         </button>
-                        <button class="action-wish pop-up-cart">
+                        <button
+                           class="action-wish pop-up-cart"
+                           type="button"
+                           aria-label="Cart"
+                        >
                            <img src="../assets/icons/buy.svg" alt="" />
                            <p class="action-wish__count total-price-header">
                               0
@@ -64,7 +78,7 @@
                      <div class="user" style="display: none">
                         <img
                            src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
-                           alt=""
+                           alt="User Avatar"
                            class="action-avatar"
                         />
                      </div>
@@ -72,7 +86,9 @@
                   <div class="pop-up-cart-block">
                      <div class="pop-header">
                         <h3 class="pop-header-heading"></h3>
-                        <p class="pop-header__see-all">See All</p>
+                        <button class="pop-header__see-all" type="button">
+                           See All
+                        </button>
                      </div>
                      <ul class="pop-list"></ul>
                      <div class="polygon"></div>
@@ -80,10 +96,12 @@
                      <div class="total-price">
                         <div class="total-subtotal-info">
                            <p class="total-subtotal-text">Subtotal:</p>
-                           <p class="total-subtotal-price">$415.99</p>
+                           <p class="total-subtotal-price total-subtotal">
+                              $415.99
+                           </p>
                         </div>
                         <div class="total-subtotal-info">
-                           <p class="total-subtotal-text">Texes:</p>
+                           <p class="total-subtotal-text">Taxes:</p>
                            <p class="total-subtotal-price">Free</p>
                         </div>
                         <div class="total-subtotal-info">
@@ -95,41 +113,77 @@
                            <p class="total-price-text">$0.00</p>
                         </div>
                      </div>
-                     <div class="pop-checkout">
-                        <span class="pop-checkout-text"> Checkout All </span>
-                     </div>
+                     <a
+                        href="./pages/checkout.html"
+                        class="pop-checkout"
+                        type="button"
+                     >
+                        <span class="pop-checkout-text">Checkout All</span>
+                     </a>
                   </div>
                </div>
-               <action class="action-profile" style="display: flex">
+               <div class="action-profile" style="display: flex">
                   <!-- login -->
-                  <a href="../pages/signIn.html" class="action-sign-in">
-                     Sign In
-                  </a>
-                  <!-- register -->
-                  <a href="../pages/signUp.html" class="action-sign-up">
-                     Sign Up</a
+                  <a href="./pages/signIn.html" class="action-sign-in"
+                     >Sign In</a
                   >
-               </action>
+                  <!-- register -->
+                  <a href="./pages/signUp.html" class="action-sign-up"
+                     >Sign Up</a
+                  >
+               </div>
             </div>
          </div>
       </header>
-
+      <section class="header-banner" id="header-banner">
+         <div class="container">
+            <div class="slider-container">
+               <button class="arrow arrow-left" id="prevBtn">❮</button>
+               <button class="arrow arrow-right" id="nextBtn">❯</button>
+               <div class="slide-counter" id="slideCounter">1 / 5</div>
+               <div class="slider-wrapper" id="sliderWrapper">
+                  <img src="./assets/image/banner.svg" alt="" class="slide" />
+                  <img src="./assets/image/banner-1.png" alt="" class="slide" />
+                  <img src="./assets/image/banner-2.png" alt="" class="slide" />
+                  <img src="./assets/image/banner-3.png" alt="" class="slide" />
+                  <img src="./assets/image/banner-4.png" alt="" class="slide" />
+               </div>
+               <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <div class="dots-container" id="dotsContainer">
+               <div class="dot active" data-slide="0"></div>
+               <div class="dot" data-slide="1"></div>
+               <div class="dot" data-slide="2"></div>
+               <div class="dot" data-slide="3"></div>
+               <div class="dot" data-slide="4"></div>
+            </div>
+         </div>
+      </section>
       <div class="products">
          <div class="container">
             <div class="products-row">
                <h1 class="products-heading">Total LavAzza 1320</h1>
-               <button class="products-filter"></button>
+               <button
+                  class="products-filter"
+                  type="button"
+                  aria-label="Filter products"
+               ></button>
             </div>
             <div id="products-list" class="products-list"></div>
          </div>
       </div>
-      <div class="footer">
+
+      <footer class="footer">
          <div class="container">
             <div class="footer__row">
                <!-- Footer column 1 -->
                <div class="footer__col">
                   <!-- Logo -->
-                  <a href="#!" class="logo footer__logo">
+                  <a
+                     href="#!"
+                     class="logo footer__logo"
+                     onclick="event.preventDefault()"
+                  >
                      <img
                         src="../assets/icons/logo.svg"
                         alt="grocerymart"
@@ -144,13 +198,20 @@
                   <p class="footer__help-text">
                      Receive product news and updates.
                   </p>
-                  <form action="" class="footer__form">
+                  <form
+                     action="#"
+                     class="footer__form"
+                     onsubmit="event.preventDefault()"
+                  >
                      <input
-                        type="text"
+                        type="email"
                         class="footer__input"
                         placeholder="Email address"
+                        required
                      />
-                     <button class="btn btn--primary">SEND</button>
+                     <button class="btn btn--primary" type="submit">
+                        SEND
+                     </button>
                   </form>
                </div>
                <!-- Footer column 2 -->
@@ -158,23 +219,29 @@
                   <h3 class="footer__heading">Shop</h3>
                   <ul class="footer__list">
                      <li>
-                        <a href="#!" class="footer__link">All Departments</a>
+                        <button class="footer__link btn-link" type="button">
+                           All Departments
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Fashion Deals</a>
+                        <button class="footer__link btn-link" type="button">
+                           Fashion Deals
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link"
-                           >Electronics Discounts</a
-                        >
+                        <button class="footer__link btn-link" type="button">
+                           Electronics Discounts
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link"
-                           >Home & Living Specials</a
-                        >
+                        <button class="footer__link btn-link" type="button">
+                           Home &amp; Living Specials
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Beauty Bargains</a>
+                        <button class="footer__link btn-link" type="button">
+                           Beauty Bargains
+                        </button>
                      </li>
                   </ul>
                </div>
@@ -183,10 +250,14 @@
                   <h3 class="footer__heading">Support</h3>
                   <ul class="footer__list">
                      <li>
-                        <a href="#!" class="footer__link">Store locator</a>
+                        <button class="footer__link btn-link" type="button">
+                           Store locator
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Order status</a>
+                        <button class="footer__link btn-link" type="button">
+                           Order status
+                        </button>
                      </li>
                   </ul>
                </div>
@@ -195,22 +266,34 @@
                   <h3 class="footer__heading">Company</h3>
                   <ul class="footer__list">
                      <li>
-                        <a href="#!" class="footer__link">Customer Service</a>
+                        <button class="footer__link btn-link" type="button">
+                           Customer Service
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Terms of Use</a>
+                        <button class="footer__link btn-link" type="button">
+                           Terms of Use
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Privacy</a>
+                        <button class="footer__link btn-link" type="button">
+                           Privacy
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Careers</a>
+                        <button class="footer__link btn-link" type="button">
+                           Careers
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">About</a>
+                        <button class="footer__link btn-link" type="button">
+                           About
+                        </button>
                      </li>
                      <li>
-                        <a href="#!" class="footer__link">Affiliates</a>
+                        <button class="footer__link btn-link" type="button">
+                           Affiliates
+                        </button>
                      </li>
                   </ul>
                </div>
@@ -253,57 +336,62 @@
                   <a
                      href="#!"
                      class="footer__social-link footer__social-link--facebook"
+                     onclick="event.preventDefault()"
                   >
                      <img
                         src="../assets/icons/facebook.svg"
-                        alt=""
+                        alt="Facebook"
                         class="footer__social-icon"
                      />
                   </a>
                   <a
                      href="#!"
                      class="footer__social-link footer__social-link--youtube"
+                     onclick="event.preventDefault()"
                   >
                      <img
                         src="../assets/icons/youtube.svg"
-                        alt=""
+                        alt="YouTube"
                         class="footer__social-icon"
                      />
                   </a>
                   <a
                      href="#!"
                      class="footer__social-link footer__social-link--tiktok"
+                     onclick="event.preventDefault()"
                   >
                      <img
                         src="../assets/icons/tiktok.svg"
-                        alt=""
+                        alt="TikTok"
                         class="footer__social-icon"
                      />
                   </a>
                   <a
                      href="#!"
                      class="footer__social-link footer__social-link--twitter"
+                     onclick="event.preventDefault()"
                   >
                      <img
                         src="../assets/icons/twitter.svg"
-                        alt=""
+                        alt="Twitter"
                         class="footer__social-icon"
                      />
                   </a>
                   <a
                      href="#!"
                      class="footer__social-link footer__social-link--linkedin"
+                     onclick="event.preventDefault()"
                   >
                      <img
                         src="../assets/icons/linkedin.svg"
-                        alt=""
+                        alt="LinkedIn"
                         class="footer__social-icon"
                      />
                   </a>
                </div>
             </div>
          </div>
-      </div>
+      </footer>
       <script type="module" src="./assets/js/index.js"></script>
    </body>
 </html>

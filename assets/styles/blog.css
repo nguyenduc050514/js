@@ -111,7 +111,7 @@ body {
 /* Main Content */
 .blog-main-content {
    max-width: 1200px;
-   margin: 0 auto;
+   margin: 100px auto 0;
    padding: 50px 20px;
    display: grid;
    grid-template-columns: 2fr 1fr;

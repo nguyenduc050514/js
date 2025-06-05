@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/checkout.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <nav class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/about.html" class="navbar-link"
+                           >About</a
+                        >
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/contact.html" class="navbar-link"
+                           >Contact</a
+                        >
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/blog.html" class="navbar-link"
+                           >Blog</a
+                        >
+                     </li>
+                  </ul>
+               </nav>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button
+                        class="action-search"
+                        type="button"
+                        aria-label="Search"
+                     >
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button
+                           class="action-wish"
+                           type="button"
+                           aria-label="Wishlist"
+                        >
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button
+                           class="action-wish pop-up-cart"
+                           type="button"
+                           aria-label="Cart"
+                        >
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p class="action-wish__count total-price-header">
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img
+                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                           alt="User Avatar"
+                           class="action-avatar"
+                        />
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <button class="pop-header__see-all" type="button">
+                           See All
+                        </button>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Taxes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <a
+                        href="./pages/checkout.html"
+                        class="pop-checkout"
+                        type="button"
+                     >
+                        <span class="pop-checkout-text">Checkout All</span>
+                     </a>
+                  </div>
+               </div>
+               <div class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="./pages/signIn.html" class="action-sign-in"
+                     >Sign In</a
+                  >
+                  <!-- register -->
+                  <a href="./pages/signUp.html" class="action-sign-up"
+                     >Sign Up</a
+                  >
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="nav-action">
+         <div class="container">
+            <h1 class="nav-action__heading">Checkout</h1>
+         </div>
+      </div>
+
+      <div class="cart-products">
+         <div class="container">
+            <div class="cart-wrapper">
+               <div class="products"></div>
+               <div>
+                  <div class="checkout">
+                     <div class="checkout-row">
+                        <p class="checkout-text">Subtotal (items)</p>
+                        <p class="checkout-text cart-count">3</p>
+                     </div>
+                     <div class="checkout-row">
+                        <p class="checkout-text">Price (Total)</p>
+                        <p class="checkout-text cart-price">$191.65</p>
+                     </div>
+                     <div class="checkout-row">
+                        <p class="checkout-text">Shipping</p>
+                        <p class="checkout-text">$10.00</p>
+                     </div>
+                     <div class="line"></div>
+                     <div class="checkout-row">
+                        <p class="checkout-text">Estimated Total</p>
+                        <p class="checkout-text cart-total">$201.65</p>
+                     </div>
+                     <button class="checkout-pay">Payment</button>
+                  </div>
+
+                  <div class="send">
+                     <figure class="send-img">
+                        <img
+                           src="../assets/icons/send.svg"
+                           alt=""
+                           class="send-image"
+                        />
+                     </figure>
+                     <div class="send-info">
+                        <h3 class="send-heading">Send this order as a gift.</h3>
+                        <p class="send-desc">
+                           Available items will be shipped to your gift
+                           recipient.
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <template id="deleteModal">
+         <div class="modal">
+            <div class="modal-content">
+               <h2>Xác nhận xóa sản phẩm</h2>
+               <p>
+                  Bạn có chắc chắn muốn xóa
+                  <strong id="productName"></strong> khỏi giỏ hàng không?
+               </p>
+               <div class="modal-actions">
+                  <button id="confirmDelete" class="btn danger">Xóa</button>
+                  <button id="cancelDelete" class="btn">Hủy</button>
+               </div>
+            </div>
+         </div></template
+      >
+      <template id="payment">
+         <h1 class="payment-heading">Chi tiết thanh toán</h1>
+         <div class="line"></div>
+         <div class="payment-list"></div>
+         <div class="payment-sale">
+            <input
+               type="text"
+               placeholder="Nhập mã giảm giá"
+               class="voucher-input"
+            />
+            <button class="payment-use">Áp dụng</button>
+         </div>
+         <a href="#!" class="voucher-text"> Xem danh sách giảm giá </a>
+         <div class="line"></div>
+         <div class="payment-row">
+            <p>Tổng</p>
+            <p class="payment-total-price">$123</p>
+         </div>
+         <div>
+            <button class="payment-use continue-pay">
+               Tiếp tục thanh toán
+            </button>
+         </div>
+      </template>
+      <template id="voucherId">
+         <div class="voucher-card">
+            <div class="voucher-left">
+               <div class="voucher-circle"></div>
+               <div class="voucher-logo">
+                  <img src="../assets/icons/logo.svg" alt="Logo" />
+               </div>
+               <div class="voucher-code">LPANQ</div>
+               <div class="voucher-time" id="voucher-time">⏰ 11:17:41</div>
+            </div>
+            <div class="voucher-right">
+               <h3>Mã giảm giá HOT nhất</h3>
+               <p><strong style="color: #007bff">Giảm $50</strong></p>
+               <p>Áp dụng cho: <strong>mua 3 mặt hàng trở lên</strong></p>
+               <p>
+                  Còn <strong>1 lượt</strong> sử dụng. Hết hạn:
+                  <strong id="After24Hours">12:12:22 06/06/2025</strong>.
+               </p>
+               <div class="voucher-buttons">
+                  <button class="disabled-btn" disabled>
+                     Dành cho mọi người
+                  </button>
+                  <button class="use-btn">Sử dụng ngay</button>
+               </div>
+            </div>
+         </div>
+      </template>
+      <script type="module" src="../assets/js/pages/checkout.js"></script>
+   </body>
+</html>

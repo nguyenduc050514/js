@@ -1,9 +1,8 @@
-import { products, categories } from "../../data/data.js";
-import Modal from "../../common/modal.js";
-
+import Modal from "./common/modal.js";
+import ApiService from "./apis/api-service.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-
+const API_BASE_URL = "http://localhost:5000";
 const navItem = $$(".nav-item");
 const wrapperHeader = $(".wrapper-header");
 const catWrapper = $(".cat-wrapper");
@@ -13,6 +12,10 @@ const categoryFilter = $("#categoryFilter");
 const searchInput = $("#searchInput");
 const productTableBody = $("#productTableBody");
 const catBtnAdd = $(".cat-btn-add");
+
+const apiService = new ApiService(API_BASE_URL);
+const products = await apiService.getProducts();
+const categories = await apiService.getCategories();
 
 [...navItem].forEach((i) =>
    i.addEventListener("click", (e) => {

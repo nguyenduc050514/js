@@ -1,3 +1,6 @@
+// API Base URL
+const API_BASE_URL = "http://localhost:5000";
+
 // Tạo form bằng JavaScript
 const app = document.getElementById("formContainer");
 const formHTML = `
@@ -35,6 +38,42 @@ const formHTML = `
 
 app.innerHTML = formHTML;
 
+// API Helper Functions
+async function checkEmailExists(email) {
+   try {
+      const response = await fetch(`${API_BASE_URL}/users?email=${email}`);
+      if (!response.ok) {
+         throw new Error("Failed to check email");
+      }
+      const users = await response.json();
+      return users.length > 0;
+   } catch (error) {
+      console.error("Error checking email:", error);
+      return false;
+   }
+}
+
+async function createUser(userData) {
+   try {
+      const response = await fetch(`${API_BASE_URL}/users`, {
+         method: "POST",
+         headers: {
+            "Content-Type": "application/json",
+         },
+         body: JSON.stringify(userData),
+      });
+
+      if (!response.ok) {
+         throw new Error("Failed to create user");
+      }
+
+      return await response.json();
+   } catch (error) {
+      console.error("Error creating user:", error);
+      return null;
+   }
+}
+
 function showError(inputId, message) {
    const input = document.getElementById(inputId);
    const errorElement = document.getElementById(inputId + "Error");
@@ -52,10 +91,17 @@ function hideError(inputId) {
    errorElement.style.display = "none";
 }
 
-function signUp() {
+function isValidEmail(email) {
+   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   return emailRegex.test(email);
+}
+
+async function signUp() {
    const email = document.getElementById("email").value;
    const password = document.getElementById("password").value;
    const confirmPassword = document.getElementById("confirmPassword").value;
+   const defaultCard = document.getElementById("defaultCard").checked;
+
    hideError("email");
    hideError("password");
    hideError("confirmPassword");
@@ -64,8 +110,10 @@ function signUp() {
    if (!email) {
       showError("email", "Email không được để trống");
       isValid = false;
+   } else if (!isValidEmail(email)) {
+      showError("email", "Email không hợp lệ");
+      isValid = false;
    }
-
    if (!password) {
       showError("password", "Mật khẩu không được để trống");
       isValid = false;
@@ -73,7 +121,6 @@ function signUp() {
       showError("password", "Mật khẩu phải có ít nhất 6 ký tự");
       isValid = false;
    }
-
    if (!confirmPassword) {
       showError("confirmPassword", "Vui lòng xác nhận mật khẩu");
       isValid = false;
@@ -83,22 +130,33 @@ function signUp() {
    }
 
    if (isValid) {
-      const userData = {
-         email: email,
-         password: password,
-         defaultCard: defaultCard,
-         signupDate: new Date().toISOString(),
-      };
-
-      localStorage.setItem("userData", JSON.stringify(userData));
-
-      alert("Đăng ký thành công!");
-      window.location.href = "signIn.html";
-      console.log("Đã lưu vào localStorage:", userData);
-      document.getElementById("email").value = "";
-      document.getElementById("password").value = "";
-      document.getElementById("confirmPassword").value = "";
-      document.getElementById("defaultCard").checked = false;
+      try {
+         const emailExists = await checkEmailExists(email);
+         if (emailExists) {
+            showError("email", "Email này đã được sử dụng");
+            return;
+         }
+         const userData = {
+            email: email,
+            password: password,
+            defaultCard: defaultCard,
+            signupDate: new Date().toISOString(),
+         };
+         const createdUser = await createUser(userData);
+         if (createdUser) {
+            window.location.href = "./signIn.html";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("confirmPassword").value = "";
+            document.getElementById("defaultCard").checked = false;
+            window.location.href = "signIn.html";
+         } else {
+            alert("Lỗi khi tạo tài khoản. Vui lòng thử lại.");
+         }
+      } catch (error) {
+         console.error("Signup error:", error);
+         alert("Lỗi kết nối đến server. Vui lòng thử lại.");
+      }
    }
 }
 
