@@ -799,3 +799,16 @@
    align-items: center;
    flex-direction: column;
 }
+
+/* checkout-arrow */
+.continue-shopping {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 5px;
+}
+
+.continue-shopping__link {
+   color: #0056b3;
+   text-decoration: underline;
+}

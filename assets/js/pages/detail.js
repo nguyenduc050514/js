@@ -2,6 +2,8 @@ import CartManager from "../common/cart-manager.js";
 import { showNotification } from "../utils/ui-utils.js";
 import ApiService from "../apis/api-service.js";
 import { handleLoginStatus } from "../auth/auth.js";
+import handleHasLogin from "../common/hasLogin.js";
+import LogoutClass from "./logout.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 class ShoppingCart {
@@ -11,12 +13,19 @@ class ShoppingCart {
       this.apiService = new ApiService(this.API_BASE_URL);
       this.cartManager = new CartManager();
       this.handleLoginStatus = handleLoginStatus;
+      this.handleHasLogin = handleHasLogin;
+      this.logout = new LogoutClass();
       this.elements = {
          detailWrapper: $(".detail-wrapper"),
          addCartText: $(".total-price-header"),
          cartBtn: $(".action-wish.pop-up-cart"),
          cartPopup: $(".pop-up-cart-block"),
          actionWishCount: $("#action-wish__count"),
+         actionAvatar: $(".action-avatar"),
+         actionAvatarDropdown: $(".action-avatar-dropdown"),
+         userName: $("#user-name"),
+         userEmail: $("#user-email"),
+         logout: $("#logout"),
       };
    }
 
@@ -55,11 +64,28 @@ class ShoppingCart {
    }
 
    async init() {
+      if (this.elements.logout) {
+         this.elements.logout.addEventListener("click", () =>
+            this.logout.handleLogout()
+         );
+      }
       try {
+         this.users = await this.apiService.getUsers();
+         this.hasLogin = localStorage.getItem("isLoggedIn");
+         if (this.hasLogin) {
+            this.currentUserId = localStorage.getItem("currentUserId");
+            if (this.currentUserId) {
+               const user = this.users.find((u) => u.id === this.currentUserId);
+               this.elements.actionAvatar.src = user.avatar;
+               this.elements.actionAvatarDropdown.src = user.avatar;
+               this.elements.userEmail.textContent = user.email;
+               this.elements.userName.textContent = user.user_name;
+            }
+         }
          this.products = await this.apiService.getProducts();
          this.cart = await this.apiService.fetchCart();
          const likedProductIds = await this.apiService.loadLikedProducts();
-
+         this.hasLogin = localStorage.getItem("isLoggedIn");
          const params = new URLSearchParams(window.location.search);
          const productId = parseInt(params.get("id"));
 
@@ -166,6 +192,11 @@ class ShoppingCart {
          return;
       }
 
+      if (!this.hasLogin) {
+         this.handleHasLogin();
+         return;
+      }
+
       const product = this.products[productIndex];
       const originalLiked = product.liked;
       product.liked = !originalLiked;
@@ -173,7 +204,6 @@ class ShoppingCart {
       const heartSvg = e.target
          .closest(".add-cart-icon")
          .querySelector(".products-wish-svg");
-
       if (heartSvg) {
          heartSvg.src = product.liked
             ? "../../../assets/icons/heart.svg"
@@ -219,6 +249,10 @@ class ShoppingCart {
          }
 
          if (e.target.closest(".add-cart-btn")) {
+            if (!this.hasLogin) {
+               this.handleHasLogin();
+               return;
+            }
             await this.addToCart(productId);
             return;
          }
@@ -286,11 +320,11 @@ class ShoppingCart {
                method: "PATCH",
                headers: { "Content-Type": "application/json" },
                body: JSON.stringify({ quantity: updatedQuantity }),
-               credentials: "same-origin", // Hoặc 'omit' nếu không cần cookie
+               credentials: "same-origin",
             });
          } else {
             const newItem = {
-               id: product.id,
+               id: `${product.id}`,
                name: product.name,
                price: product.price,
                image: product.image,
@@ -303,7 +337,7 @@ class ShoppingCart {
                method: "POST",
                headers: { "Content-Type": "application/json" },
                body: JSON.stringify(newItem),
-               credentials: "same-origin", // Hoặc 'omit' nếu không cần cookie
+               credentials: "same-origin",
             });
          }
 

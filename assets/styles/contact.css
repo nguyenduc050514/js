@@ -3,7 +3,7 @@
    top: 0;
    left: 0;
    right: 0;
-   z-index: 2;
+   z-index: 3;
    padding: 15px 0;
    background-color: #eeeeee;
 }
@@ -525,7 +525,7 @@
 
 .contact-submit-btn {
    width: 100%;
-   background: linear-gradient(135deg, #6f4e37 0%, #8b4513 100%);
+   background: linear-gradient(135deg, #6895fb 0%, #57b6db 100%);
    color: white;
    border: none;
    padding: 18px;
@@ -635,7 +635,7 @@
 }
 
 .contact-map-header h2 {
-   color: #6f4e37;
+   color: #7797ef;
    font-size: 2.2rem;
    margin-bottom: 10px;
 }
@@ -655,7 +655,7 @@
 
 /* Coffee Hours */
 .contact-hours-section {
-   background: #6f4e37;
+   background: #7797ef;
    color: white;
    border-radius: 20px;
    padding: 40px;

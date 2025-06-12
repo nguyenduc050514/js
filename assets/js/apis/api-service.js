@@ -138,5 +138,153 @@ class ApiService {
       }
    }
 
+   async getUsers() {
+      try {
+         const response = await fetch(`${this.baseUrl}/users`);
+         if (!response.ok) {
+            throw new Error(
+               `Response status: ${response.status} - ${await response.text()}`
+            );
+         }
+         const users = await response.json();
+         if (!Array.isArray(users)) {
+            throw new Error("Products data is not an array");
+         }
+         return users;
+      } catch (error) {
+         console.error("Error fetching products:", error.message);
+         showNotification(
+            "Không thể tải users. Vui lòng kiểm tra server.",
+            "error"
+         );
+         return [];
+      }
+   }
+
+   async getSessions() {
+      try {
+         const response = await fetch(`${this.baseUrl}/sessions`);
+         if (!response.ok) {
+            throw new Error(
+               `Response status: ${response.status} - ${await response.text()}`
+            );
+         }
+         const sessions = await response.json();
+         if (!Array.isArray(sessions)) {
+            throw new Error("Sessions data is not an array");
+         }
+         return sessions;
+      } catch (error) {
+         console.error("Error fetching products:", error.message);
+         showNotification(
+            "Không thể tải users. Vui lòng kiểm tra server.",
+            "error"
+         );
+         return [];
+      }
+   }
+
+   async deleteSessionUser(id) {
+      try {
+         const response = await fetch(`${this.baseUrl}/sessions/${id}`, {
+            method: "DELETE",
+            headers: {
+               "Content-Type": "application/json",
+            },
+         });
+         if (!response.ok) {
+            throw new Error(
+               `Response status: ${response.status} - ${await response.text()}`
+            );
+         }
+         const result = await response.text();
+         return result ? JSON.parse(result) : null;
+      } catch (error) {
+         console.error("Error deleting session:", error.message);
+         showNotification(
+            "Không thể xóa session. Vui lòng kiểm tra server.",
+            "error"
+         );
+         throw error; // Re-throw để handleLogout có thể catch
+      }
+   }
+
+   async postCartProduct(id, quantity) {
+      try {
+         const res = await fetch(`${this.baseUrl}/carts/${id}`, {
+            method: "PATCH",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ quantity }),
+         });
+         if (!res.ok) {
+            throw new Error(
+               `Response status: ${res.status} - ${await res.text()}`
+            );
+         }
+         const result = await res.text();
+         return result ? JSON.parse(result) : null;
+      } catch (error) {
+         console.error("Error deleting session:", error.message);
+         showNotification(
+            "Không thể xóa session. Vui lòng kiểm tra server.",
+            "error"
+         );
+         throw error;
+      }
+   }
+
+   async createCategory(newCategory) {
+      try {
+         const res = await fetch(`${this.baseUrl}/categories`, {
+            method: "POST",
+            headers: {
+               "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newCategory),
+         });
+         if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+         }
+         return res;
+      } catch (error) {
+         console.error("Error creating category:", error);
+      }
+   }
+
+   async deleteCategories(id) {
+      try {
+         const res = await fetch(`${this.baseUrl}/categories/${id}`, {
+            method: "DELETE",
+            headers: {
+               "Content-Type": "application/json",
+            },
+         });
+         if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+         }
+         return res;
+      } catch (error) {
+         showNotification("Error delete category", "error", error);
+      }
+   }
+
+   async deleteProduct(id) {
+      try {
+         const res = await fetch(`${this.baseUrl}/products/${id}`, {
+            method: "DELETE",
+            headers: {
+               "Content-Type": "application/json",
+            },
+         });
+         if (!res.ok) {
+            throw new Error(`HTTP error! status: ${res.status}`);
+         }
+         return res;
+      } catch (error) {
+         showNotification("Error delete category", "error", error);
+      }
+   }
 }
 export default ApiService;

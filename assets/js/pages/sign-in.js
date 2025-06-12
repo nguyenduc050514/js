@@ -25,7 +25,6 @@ const formHTML = `
                     </div>
                     <a href="#" class="forgot-link">Forgot password?</a>
                 </div>
-                
                 <button class="btn-signin" type="button" onclick="signIn()">Sign In</button>
                 <button class="btn-google" onclick="googleSignIn()">
                     <span class="google-icon">G</span> Sign in with Google
@@ -118,17 +117,23 @@ async function signIn() {
          const user = users.find(
             (u) => u.email === email && u.password === password
          );
-
+         
          if (user) {
             const loginData = {
-               id: Date.now(),
+               id: `${Date.now()}`,
                userId: user.id,
                email: email,
                defaultCard: defaultCard,
                loginTime: new Date().toISOString(),
             };
-            const sessionCreated = await createLoginSession(loginData);
+            showNotification("Đăng nhập thành công!");
 
+            if (email === "duc@gmail.com") {
+               window.location.href = "admin.html";
+               return;
+            }
+
+            const sessionCreated = await createLoginSession(loginData);
             if (sessionCreated) {
                document.getElementById("email").value = "";
                document.getElementById("password").value = "";
@@ -140,7 +145,6 @@ async function signIn() {
                alert("Lỗi khi tạo phiên đăng nhập. Vui lòng thử lại.");
             }
          } else {
-            // Check if email exists but password is wrong
             const emailExists = users.some((u) => u.email === email);
             if (emailExists) {
                showError("password", "Mật khẩu không đúng");

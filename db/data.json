@@ -139,25 +139,15 @@
       "image": "https://kallos.co/cdn/shop/files/IllySingleFlowPackIperespressoCapsulesCoffeeN7.jpg?v=1692835190&width=1080",
       "liked": false,
       "categories": "Costa"
-    },
-    {
-      "id": "15",
-      "name": "Illy Coffee Single Flow - Pack Iperespresso Capsules Coffee",
-      "brand": "Costa",
-      "price": 70.5,
-      "rating": 4.4,
-      "image": "https://kallos.co/cdn/shop/files/IllySingleFlowPackIperespressoCapsulesCoffeeN7.jpg?v=1692835190&width=1080",
-      "liked": false,
-      "categories": "Costa"
     }
   ],
   "categories": [
     {
       "id": "1",
       "name": "Starbucks",
-      "description": "Discover the rich flavors of Starbucks coffee.",
+      "description": "Discover the rich flavors of Starbucks lorem.",
       "image": "/assets/image/category-1.png",
-      "products": 12
+      "products": "12"
     },
     {
       "id": "2",
@@ -171,14 +161,14 @@
       "name": "Costa Coffee",
       "description": "Indulge in the smooth and rich Costa Coffee.",
       "image": "/assets/image/category-3.png",
-      "products": 12
+      "products": "12"
     },
     {
       "id": "4",
       "name": "Peet's Coffee",
       "description": "Savor the bold flavors of Peet's Coffee.",
       "image": "/assets/image/category-4.png",
-      "products": 8
+      "products": "8"
     },
     {
       "id": "5",
@@ -206,7 +196,7 @@
       "name": "Dunkin",
       "description": "Indulge in the smooth and rich Peet's Coffee.",
       "image": "/assets/image/category-8.png",
-      "products": 8
+      "products": "8"
     },
     {
       "id": "9",
@@ -226,27 +216,276 @@
   "carts": [],
   "likedProducts": {
     "ids": [
-      "3",
-      "14"
+      "2"
     ]
   },
   "users": [
     {
       "id": "cf68",
+      "avatar": "https://hoseiki.vn/wp-content/uploads/2025/03/avatar-mac-dinh-5.jpg",
       "email": "nguyen@gmail.com",
       "password": "123456",
       "defaultCard": false,
-      "signupDate": "2025-06-04T09:35:26.721Z"
+      "signupDate": "2025-06-04T09:35:26.721Z",
+      "role": "user"
+    },
+    {
+      "id": "fe66",
+      "user_name": "Nguyen Duc",
+      "email": "nguyen1@gmail.com",
+      "avatar": "https://hoseiki.vn/wp-content/uploads/2025/03/avatar-mac-dinh-5.jpg",
+      "password": "123456",
+      "defaultCard": false,
+      "signupDate": "2025-06-09T05:11:01.907Z",
+      "role": "user"
+    },
+    {
+      "id": "5de9",
+      "email": "duc1123@gmail.com",
+      "avatar": "https://hoseiki.vn/wp-content/uploads/2025/03/avatar-mac-dinh-5.jpg",
+      "password": "123456",
+      "defaultCard": false,
+      "signupDate": "2025-06-09T10:35:33.134Z",
+      "role": "user"
+    },
+    {
+      "id": "84bf",
+      "email": "duc@gmail.com",
+      "avatar": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg",
+      "password": "123456",
+      "defaultCard": false,
+      "signupDate": "2025-06-09T10:36:23.010Z",
+      "role": "admin"
+    },
+    {
+      "id": "7779",
+      "email": "nguyenduc@gmail.com",
+      "avatar": "https://hoseiki.vn/wp-content/uploads/2025/03/avatar-mac-dinh-5.jpg",
+      "password": "123456",
+      "defaultCard": false,
+      "signupDate": "2025-06-11T04:16:38.604Z",
+      "role": "user"
     }
   ],
   "sessions": [
     {
-      "id": "1749029862229",
-      "userId": "cf68",
-      "email": "nguyen@gmail.com",
+      "id": "1749659683860",
+      "userId": "7779",
+      "email": "nguyenduc@gmail.com",
       "defaultCard": false,
-      "loginTime": "2025-06-04T09:37:42.229Z"
+      "loginTime": "2025-06-11T16:34:43.860Z"
     }
   ],
-  "order": []
+  "orders": [
+    {
+      "id": "d160d",
+      "order": [
+        {
+          "id": "1",
+          "name": "Coffee Beans - Espresso Arabica and Robusta Beans",
+          "price": 47,
+          "image": "/assets/image/products-1.png",
+          "quantity": 1,
+          "categories": "Coffee",
+          "liked": true
+        }
+      ]
+    },
+    {
+      "id": "SVJAY",
+      "order": [
+        {
+          "id": "2",
+          "name": "Lavazza Coffee Blends - Try the Italian Espresso",
+          "price": 38,
+          "image": "/assets/image/products-2.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "Rktqn",
+      "order": [
+        {
+          "id": "3",
+          "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+          "price": 99.99,
+          "image": "/assets/image/products-3.png",
+          "quantity": 4,
+          "categories": "Lavazza",
+          "liked": true
+        }
+      ]
+    },
+    {
+      "id": "oxH3U",
+      "order": [
+        {
+          "id": "3",
+          "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+          "price": 99.99,
+          "image": "/assets/image/products-3.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "w7f0K",
+      "order": [
+        {
+          "id": "6",
+          "name": "Lavazza Coffee Blends - Try the Italian Espresso",
+          "price": 38,
+          "image": "/assets/image/products-2.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "p84DJ",
+      "order": [
+        {
+          "id": "14",
+          "name": "Illy Coffee Single Flow - Pack Iperespresso Capsules Coffee",
+          "price": 70.5,
+          "image": "https://kallos.co/cdn/shop/files/IllySingleFlowPackIperespressoCapsulesCoffeeN7.jpg?v=1692835190&width=1080",
+          "quantity": 1,
+          "categories": "Costa",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "9PTBW",
+      "order": [
+        {
+          "id": "9",
+          "name": "Starbucks Holiday Blend - Ground Coffee",
+          "price": 58.5,
+          "image": "https://kallos.co/cdn/shop/files/StarbucksHolidayBlendGroundCoffee1.png?v=1726499514&width=1080",
+          "quantity": 1,
+          "categories": "Starbucks",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "ulED1",
+      "order": [
+        {
+          "id": "11",
+          "name": "Starbucks Espresso Dark Roast -  Whole Bean Coffee",
+          "price": 54.5,
+          "image": "https://kallos.co/cdn/shop/products/ca-phe-starbucks-espresso-dark-roast-whole-bean-kallos-vietnam-1.jpg?v=1676068063&width=1080",
+          "quantity": 1,
+          "categories": "Starbucks",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "vrIB3",
+      "order": [
+        {
+          "id": "2",
+          "name": "Lavazza Coffee Blends - Try the Italian Espresso",
+          "price": 38,
+          "image": "/assets/image/products-2.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "wzj22",
+      "order": [
+        {
+          "id": "7",
+          "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+          "price": 99.99,
+          "image": "/assets/image/products-3.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "v5lSD",
+      "order": [
+        {
+          "id": "13",
+          "name": "Starbucks Coffee Vanilla - Macchiato Dolce Gusto",
+          "price": 70.5,
+          "image": "https://kallos.co/cdn/shop/files/StarbucksMadagascarVanillaMacchiatoDolceGusto1.jpg?v=1726400708&width=1080",
+          "quantity": 1,
+          "categories": "Nescafe",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "fdlYo",
+      "order": [
+        {
+          "id": "7",
+          "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+          "price": 99.99,
+          "image": "/assets/image/products-3.png",
+          "quantity": 3,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "5GDqL",
+      "order": [
+        {
+          "id": "3",
+          "name": "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+          "price": 99.99,
+          "image": "/assets/image/products-3.png",
+          "quantity": 1,
+          "categories": "Lavazza",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "QjMm2",
+      "order": [
+        {
+          "id": "10",
+          "name": "Starbucks Espresso Dark Roast - Whole Bean Coffee",
+          "price": 60.3,
+          "image": "https://kallos.co/cdn/shop/files/StarbucksEspressoDarkRoastWholeBean9.jpg?v=1696087364&width=1080",
+          "quantity": 1,
+          "categories": "Starbucks",
+          "liked": false
+        }
+      ]
+    },
+    {
+      "id": "09CqQ",
+      "order": [
+        {
+          "id": "13",
+          "name": "Starbucks Coffee Vanilla - Macchiato Dolce Gusto",
+          "price": 70.5,
+          "image": "https://kallos.co/cdn/shop/files/StarbucksMadagascarVanillaMacchiatoDolceGusto1.jpg?v=1726400708&width=1080",
+          "quantity": 1,
+          "categories": "Nescafe",
+          "liked": false
+        }
+      ]
+    }
+  ]
 }

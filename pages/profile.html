@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/profile.css" />
+      <title>Document</title>
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <navbar class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./about.html" class="navbar-link">about</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./contact.html" class="navbar-link">Contact</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="./blog.html" class="navbar-link">Blog</a>
+                     </li>
+                  </ul>
+               </navbar>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button class="action-search">
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button class="action-wish">
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button class="action-wish pop-up-cart">
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p class="action-wish__count total-price-header">
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img src="" alt="User Avatar" class="action-avatar" />
+                        <div class="sidebar">
+                           <a href="./profile.html" class="user-info">
+                              <img
+                                 src=""
+                                 alt="User Avatar"
+                                 class="action-avatar-dropdown"
+                              />
+                              <div>
+                                 <h3 id="user-name">John Smith</h3>
+                                 <p id="user-email">@johnsmith</p>
+                              </div>
+                           </a>
+                           <div class="line"></div>
+                           <a href="./profile.html" class="menu-item">
+                              Profile
+                           </a>
+                           <a href="#!" class="menu-item">Favourite list</a>
+                           <a href="#!" class="menu-item">Settings</a>
+                           <a href="#!" class="line"></a>
+                           <a href="#!" class="menu-item" id="logout">Logout</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <p class="pop-header__see-all">See All</p>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Texes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <a
+                        href="../pages/checkout.html"
+                        class="pop-checkout"
+                        type="button"
+                     >
+                        <span class="pop-checkout-text">Checkout All</span>
+                     </a>
+                  </div>
+               </div>
+               <action class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="../pages/signIn.html" class="action-sign-in">
+                     Sign In
+                  </a>
+                  <!-- register -->
+                  <a href="../pages/signUp.html" class="action-sign-up">
+                     Sign Up</a
+                  >
+               </action>
+            </div>
+         </div>
+      </header>
+
+      <div class="profile">
+         <div class="container wallet-main-container">
+            <div class="wallet-left-sidebar">
+               <div class="wallet-user-profile-card">
+                  <div class="wallet-user-avatar-circle">
+                     <img
+                        src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                        alt="User Avatar"
+                        class="avt"
+                     />
+                  </div>
+                  <div class="wallet-user-display-name">John Doe</div>
+                  <div class="wallet-user-registration-date">
+                     Registered: 17th Nov 2022
+                  </div>
+               </div>
+
+               <ul class="wallet-navigation-menu">
+                  <li class="wallet-menu-section-group">
+                     <div class="wallet-menu-section-title">Manage Account</div>
+                     <div
+                        class="wallet-navigation-menu-item wallet-menu-item-active"
+                     >
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/user.svg" alt="" />
+                        </div>
+                        Personal Info
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/location.svg" alt="" />
+                        </div>
+                        Addresses
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/message.svg" alt="" />
+                        </div>
+                        Communication & privacy
+                     </div>
+                  </li>
+
+                  <li class="wallet-menu-section-group">
+                     <div class="wallet-menu-section-title">My Items</div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/download.svg" alt="" />
+                        </div>
+                        Reorder
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/heart.svg" alt="" />
+                        </div>
+                        Lists
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/present.svg" alt="" />
+                        </div>
+                        Registries
+                     </div>
+                  </li>
+
+                  <li class="wallet-menu-section-group">
+                     <div class="wallet-menu-section-title">
+                        Subscriptions & plans
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/done.svg" alt="" />
+                        </div>
+                        Protection plans
+                     </div>
+                  </li>
+
+                  <li class="wallet-menu-section-group">
+                     <div class="wallet-menu-section-title">
+                        Customer Service
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/square.svg" alt="" />
+                        </div>
+                        Help
+                     </div>
+                     <div class="wallet-navigation-menu-item">
+                        <div class="wallet-menu-item-icon">
+                           <img src="../assets/icons/square.svg" alt="" />
+                        </div>
+                        Terms of Use
+                     </div>
+                  </li>
+               </ul>
+            </div>
+
+            <div class="wallet-main-content-area">
+               <div class="wallet-page-header">
+                  <h1 class="wallet-main-title">My Wallet</h1>
+                  <p class="wallet-payment-methods-subtitle">Payment methods</p>
+               </div>
+
+               <div class="wallet-credit-cards-section">
+                  <div class="wallet-cards-display-container">
+                     <div
+                        class="wallet-credit-card-item wallet-card-blue-gradient"
+                     >
+                        <img src="../assets/icons/card-1.svg" alt="" />
+                     </div>
+
+                     <div
+                        class="wallet-credit-card-item wallet-card-dark-gradient"
+                     >
+                        <img src="../assets/icons/card-2.svg" alt="" />
+                     </div>
+
+                     <div class="wallet-add-new-card-btn">
+                        <div class="wallet-add-card-plus-icon">+</div>
+                        <div>Add New Card</div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="wallet-account-info-section">
+                  <h2 class="wallet-section-title">Account info</h2>
+                  <p class="wallet-section-subtitle">
+                     Addresses, contact information and password
+                  </p>
+
+                  <div class="wallet-account-details-grid">
+                     <div class="wallet-info-field-group">
+                        <div class="wallet-field-icon-wrapper">📧</div>
+                        <div class="wallet-field-content">
+                           <div class="wallet-field-label">Email Address</div>
+                           <div class="wallet-field-value">
+                              john.doe@gmail.com
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="wallet-info-field-group">
+                        <div class="wallet-field-icon-wrapper">📱</div>
+                        <div class="wallet-field-content">
+                           <div class="wallet-field-label">Phone number</div>
+                           <div class="wallet-field-value">
+                              +84 0123 456 789
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="wallet-info-field-group wallet-address-field">
+                        <div class="wallet-field-icon-wrapper">📍</div>
+                        <div class="wallet-field-content">
+                           <div class="wallet-field-label">Add an address</div>
+                           <div class="wallet-field-value">
+                              Vietnam Embassy, Ho Chi Minh City, Vietnam 70000
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="wallet-shopping-lists-section">
+                  <h2 class="wallet-section-title">Lists</h2>
+                  <div class="wallet-list-stats">2 items • Primary</div>
+
+                  <div class="wallet-product-item">
+                     <div class="wallet-product-image">☕</div>
+                     <div class="wallet-product-details">
+                        <div class="wallet-product-name">
+                           Coffee Beans - Espresso Arabica and Robusta Beans
+                        </div>
+                        <div class="wallet-product-description">
+                           Premium quality coffee blend
+                        </div>
+                     </div>
+                     <div class="wallet-product-price">$47.00</div>
+                     <button class="wallet-add-to-cart-btn">Add to cart</button>
+                  </div>
+
+                  <div class="wallet-product-item">
+                     <div class="wallet-product-image">☕</div>
+                     <div class="wallet-product-details">
+                        <div class="wallet-product-name">
+                           Lavazza Coffee Blends - Try the Italian Espresso
+                        </div>
+                        <div class="wallet-product-description">
+                           Authentic Italian coffee experience
+                        </div>
+                     </div>
+                     <div class="wallet-product-price">$53.00</div>
+                     <button class="wallet-add-to-cart-btn">Add to cart</button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <footer class="footer">
+         <div class="container">
+            <div class="footer__row">
+               <!-- Footer column 1 -->
+               <div class="footer__col">
+                  <!-- Logo -->
+                  <a
+                     href="#!"
+                     class="logo footer__logo"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/logo.svg"
+                        alt="grocerymart"
+                        class="logo__img"
+                     />
+                     <h1 class="logo__title">grocerymart</h1>
+                  </a>
+                  <p class="footer__desc">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quam, maxime et veniam eligendi rem voluptatibus.
+                  </p>
+                  <p class="footer__help-text">
+                     Receive product news and updates.
+                  </p>
+                  <form
+                     action="#"
+                     class="footer__form"
+                     onsubmit="event.preventDefault()"
+                  >
+                     <input
+                        type="email"
+                        class="footer__input"
+                        placeholder="Email address"
+                        required
+                     />
+                     <button class="btn btn--primary" type="submit">
+                        SEND
+                     </button>
+                  </form>
+               </div>
+               <!-- Footer column 2 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Shop</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           All Departments
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Fashion Deals
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Electronics Discounts
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Home &amp; Living Specials
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Beauty Bargains
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 3 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Support</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Store locator
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Order status
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 4 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Company</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Customer Service
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Terms of Use
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Privacy
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Careers
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           About
+                        </button>
+                     </li>
+                     <li>
+                        <button class="footer__link btn-link" type="button">
+                           Affiliates
+                        </button>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 5 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Contact</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <p class="footer__label">Email</p>
+                        <a
+                           href="mailto:contact@grocerymart.com"
+                           class="footer__link"
+                        >
+                           contact@grocerymart.com
+                        </a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hotline</p>
+                        <a href="tel:18008888" class="footer__link">18008888</a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Address</p>
+                        <p class="footer__text">
+                           No. 11D, Lot A10, Nam Trung Yen urban area, Yen Hoa
+                           Ward, Cau Giay District, City. Hanoi
+                        </p>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hours</p>
+                        <p class="footer__text">M - F 08:00am - 06:00pm</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="footer__copyright">
+                  © 2010 - 2025 Grocery Mart. All rights reserved.
+               </p>
+               <div class="footer__socials">
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--facebook"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/facebook.svg"
+                        alt="Facebook"
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--youtube"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/youtube.svg"
+                        alt="YouTube"
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--tiktok"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/tiktok.svg"
+                        alt="TikTok"
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--twitter"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/twitter.svg"
+                        alt="Twitter"
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--linkedin"
+                     onclick="event.preventDefault()"
+                  >
+                     <img
+                        src="../assets/icons/linkedin.svg"
+                        alt="LinkedIn"
+                        class="footer__social-icon"
+                     />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+      <script type="module" src="../assets/js/pages/profile.js"></script>
+   </body>
+</html>

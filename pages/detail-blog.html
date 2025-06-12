@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="vi">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Bí Quyết Pha Cà Phê Espresso Hoàn Hảo Tại Nhà</title>
+      <link rel="stylesheet" href="../assets/styles/reset.css" />
+      <link rel="stylesheet" href="../assets/styles/common.css" />
+      <link rel="stylesheet" href="../assets/styles/detail-blog.css" />
+   </head>
+   <body>
+      <header class="header" id="header">
+         <div class="container">
+            <div class="header-wrapper">
+               <!-- logo -->
+               <a href="/" class="logo">
+                  <img
+                     src="../assets/icons/logo.svg"
+                     alt="grocerymart"
+                     class="logo__img"
+                  />
+                  <h1 class="logo__title">grocerymart</h1>
+               </a>
+               <nav class="navbar">
+                  <ul class="navbar-list">
+                     <li class="navbar-item">
+                        <a href="/" class="navbar-link">Home</a>
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/about.html" class="navbar-link"
+                           >About</a
+                        >
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/contact.html" class="navbar-link"
+                           >Contact</a
+                        >
+                     </li>
+                     <li class="navbar-item">
+                        <a href="../pages/blog.html" class="navbar-link"
+                           >Blog</a
+                        >
+                     </li>
+                  </ul>
+               </nav>
+               <div class="action" style="display: none">
+                  <div class="action-wrapper">
+                     <button
+                        class="action-search"
+                        type="button"
+                        aria-label="Search"
+                     >
+                        <img src="../assets/icons/search.svg" alt="search" />
+                     </button>
+                     <div class="action-love">
+                        <button
+                           class="action-wish"
+                           type="button"
+                           aria-label="Wishlist"
+                        >
+                           <img src="../assets/icons/wish.svg" alt="" />
+                           <p
+                              class="action-wish__count"
+                              id="action-wish__count"
+                           >
+                              03
+                           </p>
+                        </button>
+                        <button
+                           class="action-wish pop-up-cart"
+                           type="button"
+                           aria-label="Cart"
+                        >
+                           <img src="../assets/icons/buy.svg" alt="" />
+                           <p class="action-wish__count total-price-header">
+                              0
+                           </p>
+                        </button>
+                     </div>
+                     <div class="user" style="display: none">
+                        <img
+                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                           alt="User Avatar"
+                           class="action-avatar"
+                        />
+                        <div class="sidebar">
+                           <a href="./pages/profile.html" class="user-info">
+                              <img
+                                 src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
+                                 alt="User Avatar"
+                                 class="action-avatar-dropdown"
+                              />
+                              <div>
+                                 <h3 id="user-name">John Smith</h3>
+                                 <p id="user-email">@johnsmith</p>
+                              </div>
+                           </a>
+                           <div class="line"></div>
+                           <a href="./pages/profile.html" class="menu-item">
+                              Profile
+                           </a>
+                           <a href="#!" class="menu-item">Favourite list</a>
+                           <a href="#!" class="menu-item">Settings</a>
+                           <a href="#!" class="line"></a>
+                           <a href="#!" class="menu-item" id="logout">Logout</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="pop-up-cart-block">
+                     <div class="pop-header">
+                        <h3 class="pop-header-heading"></h3>
+                        <button class="pop-header__see-all" type="button">
+                           See All
+                        </button>
+                     </div>
+                     <ul class="pop-list"></ul>
+                     <div class="polygon"></div>
+                     <div class="line"></div>
+                     <div class="total-price">
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Subtotal:</p>
+                           <p class="total-subtotal-price">$415.99</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Taxes:</p>
+                           <p class="total-subtotal-price">Free</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-subtotal-text">Shipping:</p>
+                           <p class="total-subtotal-price">$10.00</p>
+                        </div>
+                        <div class="total-subtotal-info">
+                           <p class="total-text">Total Price:</p>
+                           <p class="total-price-text">$0.00</p>
+                        </div>
+                     </div>
+                     <a
+                        href="./pages/checkout.html"
+                        class="pop-checkout"
+                        type="button"
+                     >
+                        <span class="pop-checkout-text">Checkout All</span>
+                     </a>
+                  </div>
+               </div>
+               <div class="action-profile" style="display: flex">
+                  <!-- login -->
+                  <a href="./pages/signIn.html" class="action-sign-in"
+                     >Sign In</a
+                  >
+                  <!-- register -->
+                  <a href="./pages/signUp.html" class="action-sign-up"
+                     >Sign Up</a
+                  >
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="detail-blog">
+         <div class="container">
+            <a href="#" class="back-button"> ← Quay lại danh sách bài viết </a>
+
+            <header class="blog-header">
+               <div class="blog-meta">
+                  <div class="meta-item">
+                     <svg
+                        class="meta-icon"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                     >
+                        <path
+                           fill-rule="evenodd"
+                           d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                           clip-rule="evenodd"
+                        />
+                     </svg>
+                     25 Tháng 5, 2025
+                  </div>
+                  <div class="meta-item">
+                     <svg
+                        class="meta-icon"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                     >
+                        <path
+                           fill-rule="evenodd"
+                           d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                           clip-rule="evenodd"
+                        />
+                     </svg>
+                     Admin
+                  </div>
+                  <div class="meta-item">
+                     <svg
+                        class="meta-icon"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                     >
+                        <path
+                           fill-rule="evenodd"
+                           d="M18 3a1 1 0 00-1.447-.894L8.763 6H5a3 3 0 000 6h.28l1.771 5.316A1 1 0 008 18h1a1 1 0 001-1v-4.382l6.553 3.276A1 1 0 0018 15V3z"
+                           clip-rule="evenodd"
+                        />
+                     </svg>
+                     15 bình luận
+                  </div>
+               </div>
+
+               <h1 class="blog-title">
+                  Bí Quyết Pha Cà Phê Espresso Hoàn Hảo Tại Nhà
+               </h1>
+
+               <p class="blog-excerpt">
+                  Khám phá những bí mật của việc pha chế espresso như một
+                  barista chuyên nghiệp. Từ cách chọn hạt cà phê, xay bột, đến
+                  kỹ thuật tamping và chiết xuất để có được tách espresso hoàn
+                  hảo với crema dày đặc.
+               </p>
+            </header>
+
+            <main class="blog-content">
+               <section class="content-section">
+                  <h2 class="section-title">Giới Thiệu Về Espresso</h2>
+                  <p class="content-text">
+                     Espresso không chỉ là một loại đồ uống, mà còn là
+                     <span class="highlight">nghệ thuật pha chế</span> đòi hỏi
+                     sự tinh tế và kỹ thuật. Được sinh ra tại Ý vào đầu thế kỷ
+                     20, espresso đã trở thành nền tảng cho hầu hết các loại đồ
+                     uống cà phê phổ biến hiện nay như cappuccino, latte, và
+                     americano.
+                  </p>
+                  <p class="content-text">
+                     Một tách espresso hoàn hảo phải có
+                     <span class="highlight">crema vàng óng</span>, vị đậm đà
+                     nhưng không quá đắng, và hương thơm quyến rũ. Để đạt được
+                     điều này, bạn cần hiểu rõ về từng bước trong quy trình pha
+                     chế.
+                  </p>
+               </section>
+
+               <section class="content-section">
+                  <h2 class="section-title">Thiết Bị Cần Thiết</h2>
+                  <div class="equipment-grid">
+                     <div class="equipment-card">
+                        <div class="equipment-icon">⚙️</div>
+                        <div class="equipment-name">Máy Pha Espresso</div>
+                        <p>
+                           Máy pha chuyên dụng với áp suất 9 bar và nhiệt độ ổn
+                           định 90-96°C
+                        </p>
+                     </div>
+                     <div class="equipment-card">
+                        <div class="equipment-icon">🔧</div>
+                        <div class="equipment-name">Máy Xay Cà Phê</div>
+                        <p>
+                           Máy xay burr để có độ xay đều và kiểm soát được độ
+                           mịn
+                        </p>
+                     </div>
+                     <div class="equipment-card">
+                        <div class="equipment-icon">🥄</div>
+                        <div class="equipment-name">Tamper</div>
+                        <p>
+                           Dụng cụ nén bột cà phê với áp lực đều để tạo
+                           extraction tối ưu
+                        </p>
+                     </div>
+                     <div class="equipment-card">
+                        <div class="equipment-icon">⚖️</div>
+                        <div class="equipment-name">Cân Điện Tử</div>
+                        <p>
+                           Để đo chính xác lượng cà phê và thời gian chiết xuất
+                        </p>
+                     </div>
+                  </div>
+               </section>
+
+               <section class="content-section">
+                  <h2 class="section-title">Quy Trình Pha Chế Chi Tiết</h2>
+
+                  <div class="tips-list">
+                     <h3>Bước 1: Chuẩn Bị Nguyên Liệu</h3>
+                     <div class="tip-item">
+                        Chọn hạt cà phê arabica chất lượng cao, rang vừa (medium
+                        roast)
+                     </div>
+                     <div class="tip-item">
+                        Sử dụng 18-20g cà phê cho một shot espresso đôi
+                     </div>
+                     <div class="tip-item">
+                        Hạt cà phê nên được rang trong vòng 2-4 tuần gần nhất
+                     </div>
+                  </div>
+
+                  <div class="tips-list">
+                     <h3>Bước 2: Xay Và Chuẩn Bị Bột</h3>
+                     <div class="tip-item">
+                        Xay cà phê ngay trước khi pha để giữ nguyên hương vị
+                     </div>
+                     <div class="tip-item">
+                        Độ xay phải mịn như muối ăn, không quá mịn như bột
+                     </div>
+                     <div class="tip-item">
+                        Phân phối đều bột cà phê trong portafilter
+                     </div>
+                  </div>
+
+                  <div class="tips-list">
+                     <h3>Bước 3: Tamping (Nén Bột)</h3>
+                     <div class="tip-item">
+                        Sử dụng lực khoảng 15-20kg để nén bột cà phê
+                     </div>
+                     <div class="tip-item">
+                        Nén thẳng đứng, không nghiêng để tránh extraction không
+                        đều
+                     </div>
+                     <div class="tip-item">
+                        Sau khi nén, xoay tamper nhẹ để làm phẳng bề mặt
+                     </div>
+                  </div>
+
+                  <div class="tips-list">
+                     <h3>Bước 4: Chiết Xuất</h3>
+                     <div class="tip-item">
+                        Thời gian chiết xuất lý tưởng là 25-30 giây
+                     </div>
+                     <div class="tip-item">
+                        Tỷ lệ chiết xuất nên đạt 1:2 (18g cà phê → 36ml
+                        espresso)
+                     </div>
+                     <div class="tip-item">
+                        Crema phải có màu vàng nâu, dày khoảng 3-4mm
+                     </div>
+                  </div>
+               </section>
+
+               <section class="content-section">
+                  <h2 class="section-title">Bí Quyết Thành Công</h2>
+                  <p class="content-text">
+                     <span class="highlight">Nhiệt độ ổn định</span> là yếu tố
+                     then chốt. Máy pha espresso cần được khởi động ít nhất
+                     15-20 phút trước khi sử dụng để đảm bảo nhiệt độ đều khắp
+                     hệ thống.
+                  </p>
+                  <p class="content-text">
+                     <span class="highlight">Chất lượng nước</span> ảnh hưởng
+                     trực tiếp đến hương vị. Sử dụng nước lọc với TDS (Total
+                     Dissolved Solids) khoảng 150-300 ppm để có kết quả tối ưu.
+                  </p>
+                  <p class="content-text">
+                     <span class="highlight">Thực hành thường xuyên</span> là
+                     chìa khóa để thành thạo. Mỗi loại cà phê có đặc tính riêng,
+                     vì vậy cần điều chỉnh độ xay và thời gian chiết xuất cho
+                     phù hợp.
+                  </p>
+               </section>
+
+               <section class="content-section">
+                  <h2 class="section-title">Khắc Phục Lỗi Thường Gặp</h2>
+                  <p class="content-text">
+                     <strong>Espresso chảy quá nhanh:</strong> Bột cà phê quá
+                     thô hoặc lượng bột quá ít. Hãy xay mịn hơn hoặc tăng lượng
+                     cà phê.
+                  </p>
+                  <p class="content-text">
+                     <strong>Espresso chảy quá chậm:</strong> Bột cà phê quá mịn
+                     hoặc nén quá chặt. Điều chỉnh độ xay thô hơn và giảm lực
+                     nén.
+                  </p>
+                  <p class="content-text">
+                     <strong>Vị quá chua:</strong> Nhiệt độ quá thấp hoặc thời
+                     gian chiết xuất quá ngắn. Tăng nhiệt độ hoặc xay mịn hơn.
+                  </p>
+                  <p class="content-text">
+                     <strong>Vị quá đắng:</strong> Nhiệt độ quá cao hoặc
+                     over-extraction. Giảm nhiệt độ hoặc xay thô hơn.
+                  </p>
+               </section>
+
+               <div class="share-section">
+                  <h3>Chia sẻ bài viết này</h3>
+                  <div class="share-buttons">
+                     <a href="#" class="share-btn facebook">Facebook</a>
+                     <a href="#" class="share-btn twitter">Twitter</a>
+                     <a href="#" class="share-btn linkedin">LinkedIn</a>
+                  </div>
+               </div>
+            </main>
+         </div>
+      </div>
+      <div class="footer">
+         <div class="container">
+            <div class="footer__row">
+               <!-- Footer column 1 -->
+               <div class="footer__col">
+                  <!-- Logo -->
+                  <a href="#!" class="logo footer__logo">
+                     <img
+                        src="../assets/icons/logo.svg"
+                        alt="grocerymart"
+                        class="logo__img"
+                     />
+                     <h1 class="logo__title">grocerymart</h1>
+                  </a>
+                  <p class="footer__desc">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                     Quam, maxime et veniam eligendi rem voluptatibus.
+                  </p>
+                  <p class="footer__help-text">
+                     Receive product news and updates.
+                  </p>
+                  <form action="" class="footer__form">
+                     <input
+                        type="text"
+                        class="footer__input"
+                        placeholder="Email address"
+                     />
+                     <button class="btn btn--primary">SEND</button>
+                  </form>
+               </div>
+               <!-- Footer column 2 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Shop</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">All Departments</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Fashion Deals</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Electronics Discounts</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link"
+                           >Home & Living Specials</a
+                        >
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Beauty Bargains</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 3 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Support</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Store locator</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Order status</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 4 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Company</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <a href="#!" class="footer__link">Customer Service</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Terms of Use</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Privacy</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Careers</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">About</a>
+                     </li>
+                     <li>
+                        <a href="#!" class="footer__link">Affiliates</a>
+                     </li>
+                  </ul>
+               </div>
+               <!-- Footer column 5 -->
+               <div class="footer__col">
+                  <h3 class="footer__heading">Contact</h3>
+                  <ul class="footer__list">
+                     <li>
+                        <p class="footer__label">Email</p>
+                        <a
+                           href="mailto:contact@grocerymart.com"
+                           class="footer__link"
+                        >
+                           contact@grocerymart.com
+                        </a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hotline</p>
+                        <a href="tel:18008888" class="footer__link">18008888</a>
+                     </li>
+                     <li>
+                        <p class="footer__label">Address</p>
+                        <p class="footer__text">
+                           No. 11D, Lot A10, Nam Trung Yen urban area, Yen Hoa
+                           Ward, Cau Giay District, City. Hanoi
+                        </p>
+                     </li>
+                     <li>
+                        <p class="footer__label">Hours</p>
+                        <p class="footer__text">M - F 08:00am - 06:00pm</p>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+            <div class="footer__bottom">
+               <p class="footer__copyright">
+                  © 2010 - 2025 Grocery Mart. All rights reserved.
+               </p>
+               <div class="footer__socials">
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--facebook"
+                  >
+                     <img
+                        src="../assets/icons/facebook.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--youtube"
+                  >
+                     <img
+                        src="../assets/icons/youtube.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--tiktok"
+                  >
+                     <img
+                        src="../assets/icons/tiktok.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--twitter"
+                  >
+                     <img
+                        src="../assets/icons/twitter.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+                  <a
+                     href="#!"
+                     class="footer__social-link footer__social-link--linkedin"
+                  >
+                     <img
+                        src="../assets/icons/linkedin.svg"
+                        alt=""
+                        class="footer__social-icon"
+                     />
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script type="module" src="../assets/js/pages/detail-blog.js"></script>
+   </body>
+</html>

@@ -27,19 +27,15 @@
                         <a href="/" class="navbar-link">Home</a>
                      </li>
                      <li class="navbar-item">
-                        <a href="../pages/about.html" class="navbar-link"
-                           >About</a
-                        >
+                        <a href="../about.html" class="navbar-link">About</a>
                      </li>
                      <li class="navbar-item">
-                        <a href="../pages/contact.html" class="navbar-link"
+                        <a href="../contact.html" class="navbar-link"
                            >Contact</a
                         >
                      </li>
                      <li class="navbar-item">
-                        <a href="../pages/blog.html" class="navbar-link"
-                           >Blog</a
-                        >
+                        <a href="../blog.html" class="navbar-link">Blog</a>
                      </li>
                   </ul>
                </nav>
@@ -78,11 +74,28 @@
                         </button>
                      </div>
                      <div class="user" style="display: none">
-                        <img
-                           src="https://hoanghamobile.com/tin-tuc/wp-content/uploads/2024/07/anh-avatar-dep-cho-con-gai-2.jpg"
-                           alt="User Avatar"
-                           class="action-avatar"
-                        />
+                        <img src="" alt="User Avatar" class="action-avatar" />
+                        <div class="sidebar">
+                           <a href="./profile.html" class="user-info">
+                              <img
+                                 src=""
+                                 alt="User Avatar"
+                                 class="action-avatar-dropdown"
+                              />
+                              <div>
+                                 <h3 id="user-name">John Smith</h3>
+                                 <p id="user-email">@johnsmith</p>
+                              </div>
+                           </a>
+                           <div class="line"></div>
+                           <a href="./profile.html" class="menu-item">
+                              Profile
+                           </a>
+                           <a href="#!" class="menu-item">Favourite list</a>
+                           <a href="#!" class="menu-item">Settings</a>
+                           <a href="#!" class="line"></a>
+                           <a href="#!" class="menu-item" id="logout">Logout</a>
+                        </div>
                      </div>
                   </div>
                   <div class="pop-up-cart-block">
@@ -114,7 +127,7 @@
                         </div>
                      </div>
                      <a
-                        href="./pages/checkout.html"
+                        href="./checkout.html"
                         class="pop-checkout"
                         type="button"
                      >
@@ -124,13 +137,9 @@
                </div>
                <div class="action-profile" style="display: flex">
                   <!-- login -->
-                  <a href="./pages/signIn.html" class="action-sign-in"
-                     >Sign In</a
-                  >
+                  <a href="./signIn.html" class="action-sign-in">Sign In</a>
                   <!-- register -->
-                  <a href="./pages/signUp.html" class="action-sign-up"
-                     >Sign Up</a
-                  >
+                  <a href="./signUp.html" class="action-sign-up">Sign Up</a>
                </div>
             </div>
          </div>
@@ -183,6 +192,12 @@
                         </p>
                      </div>
                   </div>
+                  <div class="continue-shopping">
+                     <img src="../assets/icons/arrow-left.svg" alt="" />
+                     <a href="../index.html" class="continue-shopping__link">
+                        Continue Shopping
+                     </a>
+                  </div>
                </div>
             </div>
          </div>
@@ -200,8 +215,8 @@
                   <button id="cancelDelete" class="btn">Hủy</button>
                </div>
             </div>
-         </div></template
-      >
+         </div>
+      </template>
       <template id="payment">
          <h1 class="payment-heading">Chi tiết thanh toán</h1>
          <div class="line"></div>

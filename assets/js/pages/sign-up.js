@@ -136,11 +136,18 @@ async function signUp() {
             showError("email", "Email này đã được sử dụng");
             return;
          }
+         const role = email === "duc@gmail.com" ? "admin" : "user";
+         const avatar =
+            role === "user"
+               ? "https://hoseiki.vn/wp-content/uploads/2025/03/avatar-mac-dinh-5.jpg"
+               : "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-character-default-avatar-image_2237203.jpg";
          const userData = {
-            email: email,
-            password: password,
-            defaultCard: defaultCard,
+            email,
+            avatar,
+            password,
+            defaultCard,
             signupDate: new Date().toISOString(),
+            role,
          };
          const createdUser = await createUser(userData);
          if (createdUser) {

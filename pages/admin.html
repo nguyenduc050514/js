@@ -8,6 +8,8 @@
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
       <link rel="stylesheet" href="../assets/styles/admin.css" />
    </head>
    <body>
@@ -18,52 +20,48 @@
             </div>
 
             <nav class="sidebar-nav">
-               <a href="#" class="nav-item active">
+               <a
+                  href="#"
+                  class="nav-item active"
+                  data-view="dashboard"
+                  id="dashboard"
+               >
                   <i class="fas fa-home"></i>
                   Dashboard
                </a>
-               <a href="#" class="nav-item">
+               <a
+                  href="#"
+                  class="nav-item"
+                  data-view="categories"
+                  id="categories"
+               >
                   <i class="fas fa-heart"></i>
                   Categories
                </a>
-               <a href="#" class="nav-item">
+               <a href="#" class="nav-item" data-view="products" id="products">
                   <i class="fas fa-shopping-cart"></i>
                   Products
-               </a>
-               <a href="#" class="nav-item">
-                  <i class="fas fa-bookmark"></i>
-                  Topics
-               </a>
-               <a href="#" class="nav-item">
-                  <i class="fas fa-file-alt"></i>
-                  Posts
                </a>
                <a href="#" class="nav-item">
                   <i class="fas fa-comments"></i>
                   Comments
                </a>
-               <a href="#" class="nav-item">
+               <a href="#" class="nav-item" data-view="users" id="users">
                   <i class="fas fa-users"></i>
                   Users
-               </a>
-               <a href="#" class="nav-item">
-                  <i class="fas fa-chart-bar"></i>
-                  Analytics
-               </a>
-               <a href="#" class="nav-item">
-                  <i class="fas fa-cog"></i>
-                  Settings
                </a>
             </nav>
 
             <div class="sidebar-footer">
                <div class="user-info">
-                  <div class="user-avatar">JD</div>
+                  <div class="user-avatar">
+                     <img src="" alt="" class="user-avatar_img" />
+                  </div>
                   <div class="user-details">
                      <div class="user-name">John Doe</div>
                      <div class="user-role">Administrator</div>
                   </div>
-                  <i class="fas fa-chevron-down dropdown-icon"></i>
+                  <i class="fa-solid fa-bell"></i>
                </div>
             </div>
          </div>
@@ -72,7 +70,9 @@
                <div class="wrapper-header">
                   <div class="header">
                      <h1>Products</h1>
-                     <button class="btn-primary"><span>+</span> Add New</button>
+                     <button class="btn-primary" id="addProductBtn">
+                        <span>+</span> Add New
+                     </button>
                   </div>
                   <!-- Filters -->
                   <div class="filters">
@@ -134,94 +134,193 @@
                   </div>
                </div>
                <div class="coffee-dashboard">
-                  <div class="coffee-dashboard-container">
-                     <div class="coffee-dashboard-header">
-                        <h1 class="coffee-dashboard-title">
-                           Dashboard Overview
-                        </h1>
+                  <div class="dashboard">
+                     <!-- Metrics Cards -->
+                     <div class="metrics-row">
+                        <div class="metric-card">
+                           <div class="metric-title">Page Views</div>
+                           <div class="metric-value">24,780</div>
+                           <div class="metric-change positive">
+                              12.5% from previous period
+                           </div>
+                        </div>
+                        <div class="metric-card">
+                           <div class="metric-title">Unique Visitors</div>
+                           <div class="metric-value">8,425</div>
+                           <div class="metric-change positive">
+                              8.2% from previous period
+                           </div>
+                        </div>
+                        <div class="metric-card">
+                           <div class="metric-title">Avg. Session Duration</div>
+                           <div class="metric-value">3m 42s</div>
+                           <div class="metric-change positive">
+                              4.3% from previous period
+                           </div>
+                        </div>
+                        <div class="metric-card">
+                           <div class="metric-title">Bounce Rate</div>
+                           <div class="metric-value">42.8%</div>
+                           <div class="metric-change negative">
+                              2.7% from previous period
+                           </div>
+                        </div>
                      </div>
 
-                     <div class="coffee-stats-grid">
-                        <div class="coffee-stat-card sales">
-                           <div class="coffee-stat-header">
-                              <div class="coffee-stat-content">
-                                 <div class="coffee-stat-label">
-                                    Total Sales
-                                 </div>
-                                 <div class="coffee-stat-value" id="totalSales">
-                                    $24,780
-                                 </div>
-                                 <div class="coffee-stat-change positive">
-                                    ↑ 12.5% from last month
-                                 </div>
-                              </div>
-                              <div class="coffee-stat-icon">
-                                 <i class="fas fa-dollar-sign"></i>
-                              </div>
+                     <!-- Charts Row -->
+                     <div class="charts-row">
+                        <!-- Traffic Overview -->
+                        <div class="chart-card">
+                           <div class="chart-title">Traffic Overview</div>
+                           <div class="chart-container">
+                              <canvas id="trafficChart"></canvas>
                            </div>
-                        </div>
-
-                        <div class="coffee-stat-card customers">
-                           <div class="coffee-stat-header">
-                              <div class="coffee-stat-content">
-                                 <div class="coffee-stat-label">
-                                    New Customers
-                                 </div>
+                           <div class="legend">
+                              <div class="legend-item">
                                  <div
-                                    class="coffee-stat-value"
-                                    id="newCustomers"
-                                 >
-                                    578
-                                 </div>
-                                 <div class="coffee-stat-change positive">
-                                    ↑ 8.2% from last month
-                                 </div>
+                                    class="legend-color"
+                                    style="background-color: #4285f4"
+                                 ></div>
+                                 <span class="legend-text">This Week</span>
                               </div>
-                              <div class="coffee-stat-icon">
-                                 <i class="fas fa-user-plus"></i>
-                              </div>
-                           </div>
-                        </div>
-
-                        <div class="coffee-stat-card products">
-                           <div class="coffee-stat-header">
-                              <div class="coffee-stat-content">
-                                 <div class="coffee-stat-label">
-                                    Active Products
-                                 </div>
+                              <div class="legend-item">
                                  <div
-                                    class="coffee-stat-value"
-                                    id="activeProducts"
-                                 >
-                                    1,247
-                                 </div>
-                                 <div class="coffee-stat-change positive">
-                                    ↑ 4.3% from last month
-                                 </div>
-                              </div>
-                              <div class="coffee-stat-icon">
-                                 <i class="fas fa-box"></i>
+                                    class="legend-color"
+                                    style="background-color: #34a853"
+                                 ></div>
+                                 <span class="legend-text">Previous Week</span>
                               </div>
                            </div>
                         </div>
 
-                        <div class="coffee-stat-card bounce">
-                           <div class="coffee-stat-header">
-                              <div class="coffee-stat-content">
-                                 <div class="coffee-stat-label">
-                                    Bounce Rate
-                                 </div>
-                                 <div class="coffee-stat-value" id="bounceRate">
-                                    42.8%
-                                 </div>
-                                 <div class="coffee-stat-change negative">
-                                    ↓ 2.7% from last month
-                                 </div>
+                        <!-- Traffic Sources -->
+                        <div class="chart-card">
+                           <div class="chart-title">Traffic Sources</div>
+                           <div class="chart-container">
+                              <canvas id="sourcesChart"></canvas>
+                           </div>
+                           <div class="legend">
+                              <div class="legend-item">
+                                 <div
+                                    class="legend-color"
+                                    style="background-color: #4285f4"
+                                 ></div>
+                                 <span class="legend-text">Direct</span>
                               </div>
-                              <div class="coffee-stat-icon">
-                                 <i class="fas fa-chart-pie"></i>
+                              <div class="legend-item">
+                                 <div
+                                    class="legend-color"
+                                    style="background-color: #ea4335"
+                                 ></div>
+                                 <span class="legend-text">Search</span>
+                              </div>
+                              <div class="legend-item">
+                                 <div
+                                    class="legend-color"
+                                    style="background-color: #ff6d01"
+                                 ></div>
+                                 <span class="legend-text">Social</span>
+                              </div>
+                              <div class="legend-item">
+                                 <div
+                                    class="legend-color"
+                                    style="background-color: #fbbc04"
+                                 ></div>
+                                 <span class="legend-text">Referral</span>
+                              </div>
+                              <div class="legend-item">
+                                 <div
+                                    class="legend-color"
+                                    style="background-color: #9c27b0"
+                                 ></div>
+                                 <span class="legend-text">Email</span>
                               </div>
                            </div>
+                        </div>
+
+                        <!-- User Devices -->
+                        <div class="chart-card">
+                           <div class="chart-title">User Devices</div>
+                           <div class="chart-container">
+                              <canvas id="devicesChart"></canvas>
+                           </div>
+                        </div>
+                     </div>
+
+                     <!-- Page Performance -->
+                     <div class="performance-section">
+                        <div class="chart-title">Page Performance</div>
+                        <div class="performance-chart">
+                           <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="legend">
+                           <div class="legend-item">
+                              <div
+                                 class="legend-color"
+                                 style="background-color: #4285f4"
+                              ></div>
+                              <span class="legend-text">Current</span>
+                           </div>
+                           <div class="legend-item">
+                              <div
+                                 class="legend-color"
+                                 style="background-color: #ea4335"
+                              ></div>
+                              <span class="legend-text">Previous</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="um-container">
+                  <div class="um-header">
+                     <h1 class="um-title">Users</h1>
+                  </div>
+
+                  <div class="um-filters">
+                     <div class="um-filter-row">
+                        <div class="um-field">
+                           <label class="um-label">Username</label>
+                           <input
+                              type="text"
+                              class="um-input"
+                              placeholder="Search users..."
+                           />
+                        </div>
+                        <div class="um-field">
+                           <label class="um-label">Role</label>
+                           <select class="um-select">
+                              <option>All Roles</option>
+                              <option>Admin</option>
+                              <option>User</option>
+                           </select>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="um-table-wrapper">
+                     <table class="um-table">
+                        <thead>
+                           <tr>
+                              <th class="um-th">User</th>
+                              <th class="um-th">Email</th>
+                              <th class="um-th">Role</th>
+                              <th class="um-th">Last Login</th>
+                              <th class="um-th">Actions</th>
+                           </tr>
+                        </thead>
+                        <tbody id="tbodyUsers"></tbody>
+                     </table>
+
+                     <div class="um-footer">
+                        <div class="um-info">Showing 1-6 of 42 users</div>
+                        <div class="um-pagination">
+                           <button class="um-page-btn um-active">1</button>
+                           <button class="um-page-btn">2</button>
+                           <button class="um-page-btn">3</button>
+                           <button class="um-page-btn">4</button>
+                           <button class="um-page-btn">5</button>
+                           <button class="um-page-btn">6</button>
                         </div>
                      </div>
                   </div>
@@ -357,12 +456,12 @@
             </div>
             <div class="form-group">
                <label for="categoryDesc">Description</label>
-               <input
-                  type="text"
-                  id="categoryDesc"
+               <textarea
+                  id="categoryDescArea"
                   class="form-control"
                   placeholder="Enter category description"
-               />
+               >
+               </textarea>
             </div>
             <div class="form-group">
                <label for="categoryCount">Products</label>
@@ -373,10 +472,35 @@
                   placeholder="Enter Category Count"
                />
             </div>
-            <button type="submit" class="btn-primary">Save Product</button>
+            <button type="submit" class="btn-primary">Save Category</button>
          </form>
       </template>
-
+      <template id="deleteModal">
+         <div class="modal">
+            <div class="modal-content">
+               <h2>Delete Category</h2>
+               <p>Are you sure delete this category</p>
+               <div class="modal-actions">
+                  <button id="confirmDelete" class="btn danger">Xóa</button>
+                  <button id="cancelDelete" class="btn">Hủy</button>
+               </div>
+            </div>
+         </div>
+      </template>
+      <template id="deleteProductModal">
+         <div class="modal">
+            <div class="modal-content">
+               <h2>Delete product</h2>
+               <p>Are you sure delete this product</p>
+               <div class="modal-actions">
+                  <button id="confirmDeleteProduct" class="btn danger">
+                     Xóa
+                  </button>
+                  <button id="cancelDeleteProduct" class="btn">Hủy</button>
+               </div>
+            </div>
+         </div>
+      </template>
       <script type="module" src="../assets/js/admin.js"></script>
    </body>
 </html>

@@ -3,6 +3,7 @@ import { showNotification } from "./utils/ui-utils.js";
 import CartManager from "./common/cart-manager.js";
 import ImageSlider from "./common/slider.js";
 import { handleLoginStatus } from "./auth/auth.js";
+import LogoutClass from "./pages/logout.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 class ProductList {
@@ -12,6 +13,7 @@ class ProductList {
       this.apiService = new ApiService(this.API_BASE_URL);
       this.cartManager = new CartManager();
       this.slider = new ImageSlider();
+      this.logout = new LogoutClass();
       this.handleLoginStatus = handleLoginStatus;
       this.elements = {
          productsList: $("#products-list"),
@@ -20,19 +22,39 @@ class ProductList {
          cartPopup: $(".pop-up-cart-block"),
          actionCartList: $(".pop-list"),
          checkout: $(".pop-checkout"),
+         logout: $("#logout"),
+         actionAvatar: $(".action-avatar"),
+         actionAvatarDropdown: $(".action-avatar-dropdown"),
+         userName: $("#user-name"),
+         userEmail: $("#user-email"),
       };
    }
-
    async initializeApp() {
+      this.users = await this.apiService.getUsers();
+      this.hasLogin = localStorage.getItem("isLoggedIn");
+      if (this.hasLogin) {
+         this.currentUserId = localStorage.getItem("currentUserId");
+         if (this.currentUserId) {
+            const user = this.users.find((u) => u.id === this.currentUserId);
+            this.elements.actionAvatar.src = user.avatar;
+            this.elements.actionAvatarDropdown.src = user.avatar;
+            this.elements.userEmail.textContent = user.email;
+            this.elements.userName.textContent = user.user_name;
+         }
+      }
       try {
          this.products = await this.apiService.getProducts();
-         const likedProductIds = await this.apiService.loadLikedProducts();
-         this.products.forEach((p) => {
-            p.liked = likedProductIds.includes(p.id);
-         });
-         if (this.elements.actionWishCount) {
-            this.elements.actionWishCount.textContent = likedProductIds.length;
+         if (this.hasLogin) {
+            const likedProductIds = await this.apiService.loadLikedProducts();
+            this.products.forEach((p) => {
+               p.liked = likedProductIds.includes(p.id);
+            });
+            if (this.elements.actionWishCount) {
+               this.elements.actionWishCount.textContent =
+                  likedProductIds.length;
+            }
          }
+
          this.renderProducts(this.products);
          this.handleLoginStatus();
       } catch (error) {
@@ -81,10 +103,15 @@ class ProductList {
    }
 
    async handleWishlistToggle(e) {
+      if (!this.hasLogin) {
+         showNotification("Bạn vui lòng đăng nhập!!", "error");
+         return;
+      }
+
       if (!e.target.closest(".products-wish")) return;
       e.preventDefault();
       e.stopPropagation();
-      e.stopImmediatePropagation(); // Thêm dòng này để chắc chắn
+      e.stopImmediatePropagation();
       const productsItem = e.target.closest(".products-item");
       if (!productsItem) {
          console.error("Products item not found");
@@ -141,6 +168,12 @@ class ProductList {
    }
 
    setupEventListeners() {
+      if (this.elements.logout) {
+         this.elements.logout.addEventListener("click", () =>
+            this.logout.handleLogout()
+         );
+      }
+
       if (this.elements.productsList) {
          this.elements.productsList.addEventListener("click", (e) => {
             const wishIcon = e.target.closest(".products-wish");
@@ -165,7 +198,6 @@ class ProductList {
          await this.cartManager.refreshCartUI();
          this.handleLoginStatus();
          this.setupEventListeners();
-
          window.imageSlider = this.slider;
       } catch (error) {
          console.error("Error initializing page:", error);
